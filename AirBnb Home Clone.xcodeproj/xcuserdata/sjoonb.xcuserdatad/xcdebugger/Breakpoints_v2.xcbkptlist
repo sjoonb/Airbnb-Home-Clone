@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "24A07C62-82AE-4F1D-B4F3-A6B6E3813D41"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D62A869-0241-4ECA-A0C6-9F3E95C18332"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "apply(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1DBBE9A-1969-4CDB-B863-38D6F30A2A54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "makeCollectionView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1DBBE9A-1969-4CDB-B863-38D6F30A2A54 - b827f61a7e9f4067"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.makeCollectionView() -&gt; __C.UICollectionView"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "F1DBBE9A-1969-4CDB-B863-38D6F30A2A54 - 4f7416b55550236f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, __C.NSCollectionLayoutEnvironment) -&gt; Swift.Optional&lt;__C.NSCollectionLayoutSection&gt; in AirBnb_Home_Clone.HomeView.makeCollectionView() -&gt; __C.UICollectionView"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEF56979-35B4-4CA5-9EA7-1A2A97064C3E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "makeDataSource()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EEF56979-35B4-4CA5-9EA7-1A2A97064C3E - cbb7862ec9a26f6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, AirBnb_Home_Clone.Content) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in AirBnb_Home_Clone.HomeView.makeDataSource() -&gt; UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "EEF56979-35B4-4CA5-9EA7-1A2A97064C3E - cbb7862ec9a26f6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, AirBnb_Home_Clone.Content) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in AirBnb_Home_Clone.HomeView.makeDataSource() -&gt; UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "932">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "HomeView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795 - 1481ea7274d94e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.dataSource.getter : UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795 - 1481ea7274d94e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.dataSource.setter : UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795 - 1481ea7274d94c5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.dataSource.modify : UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795 - 81a00fd568d85529"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.dataSource.modify : UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "1A51EF8E-FA1C-40E2-AC1C-0C6428635795 - 7574cd0c039ead91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.init(frame: __C.CGRect) -&gt; AirBnb_Home_Clone.HomeView"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "263">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBFEDBA8-E19D-4B14-A46E-F75005A2F75E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "makeDataSource()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBFEDBA8-E19D-4B14-A46E-F75005A2F75E - 47f7ebde96e2515b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnb_Home_Clone.HomeView.makeDataSource() -&gt; UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  uuid = "CBFEDBA8-E19D-4B14-A46E-F75005A2F75E - cbb7862ec9a26feb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, AirBnb_Home_Clone.Content) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in AirBnb_Home_Clone.HomeView.makeDataSource() -&gt; UIKit.UICollectionViewDiffableDataSource&lt;AirBnb_Home_Clone.Section, AirBnb_Home_Clone.Content&gt;"
+                  moduleName = "AirBnb Home Clone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sjoonb/Desktop/Airbnb-Home-Clone/AirBnb%20Home%20Clone/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "477">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
