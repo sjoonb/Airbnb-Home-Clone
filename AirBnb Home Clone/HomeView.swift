@@ -44,6 +44,8 @@ extension HomeView {
             // 이후에 다른 layout 적용을 위해 switch 문을 사용하는듯.
             case .nearby:
                 return .sideScrollingTwoItem()
+            default:
+                return .sideScrollingOneItem()
             }
         }
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -60,8 +62,34 @@ extension HomeView {
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
+            default:
+                let registration = LargeSquareCell.registration()
+                return view.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
             }
         }
+        
+        let headers = Section.allCases.map(\.headerContent)
+        let headerRegistration = SectionHeader.registration(headers: headers)
+        dataSource.supplementaryViewProvider = { collectionView, string, indexPath in
+            collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration,
+                                                                  for: indexPath)
+        }
+        
         return dataSource
+    }
+}
+
+extension NSCollectionLayoutBoundarySupplementaryItem {
+    convenience init(layoutSize: NSCollectionLayoutSize,
+                     kind: UICollectionView.ElementKind,
+                     alignment: NSRectAlignment) {
+        self.init(layoutSize: layoutSize,
+                  elementKind: kind.rawValue,
+                  alignment: alignment)
+    }
+
+    static func header(layoutSize: NSCollectionLayoutSize) ->
+    NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: layoutSize, kind: .header, alignment: .top)
     }
 }
