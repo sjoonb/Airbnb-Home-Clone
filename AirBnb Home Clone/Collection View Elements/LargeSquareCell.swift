@@ -11,6 +11,8 @@ import UIKit
 typealias LargeSquareCell = ContentCell<LargeSquareView>
 
 class LargeSquareView: ProgrammaticView, ContentConfiguringView {
+    
+    private lazy var style: ColorStyle = provideStyle()
 
     private let mainStack = UIStackView()
     private let imageView = UIImageView()
@@ -29,10 +31,13 @@ class LargeSquareView: ProgrammaticView, ContentConfiguringView {
         labelStack.axis = .vertical
         labelStack.spacing = 2
 
+        let textColor: UIColor =  style == .inverted ? .invertedLabel : .label
+        
         titleLabel.font = .custom(style: .headline)
-        titleLabel.textColor = .label
+        titleLabel.textColor = textColor
+        
         subtitleLabel.font = .custom(style: .subheadline)
-        subtitleLabel.textColor = .label
+        subtitleLabel.textColor = textColor
     }
 
     override func constrain() {
@@ -51,4 +56,14 @@ class LargeSquareView: ProgrammaticView, ContentConfiguringView {
         imageView.image = UIImage(named: content?.image)
     }
     
+    func provideStyle() -> ColorStyle { .standard }
+    
+}
+
+typealias InvertedLargeSuqareCell = ContentCell<InvertedLargeSquareView>
+
+class InvertedLargeSquareView: LargeSquareView {
+    override func provideStyle() -> ColorStyle {
+        .inverted
+    }
 }

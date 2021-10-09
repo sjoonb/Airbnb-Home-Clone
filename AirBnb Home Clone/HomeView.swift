@@ -44,10 +44,13 @@ extension HomeView {
             // 이후에 다른 layout 적용을 위해 switch 문을 사용하는듯.
             case .nearby:
                 return .sideScrollingTwoItem()
+            case .experiences:
+                return .invertedSideScrollingOneItem()
             default:
                 return .sideScrollingOneItem()
             }
         }
+        layout.registerBackgrounds()
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }
     
@@ -62,6 +65,12 @@ extension HomeView {
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
+            case .experiences:
+                let registration = InvertedLargeSuqareCell.registration()
+                return view.dequeueConfiguredReusableCell(using: registration,
+                                                          for: indexPath,
+                                                          item: item)
+                
             default:
                 let registration = LargeSquareCell.registration()
                 return view.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
@@ -70,9 +79,16 @@ extension HomeView {
         
         let headers = Section.allCases.map(\.headerContent)
         let headerRegistration = SectionHeader.registration(headers: headers)
+        let invertedRegistration = InvertedHeader.registration(headers: headers)
         dataSource.supplementaryViewProvider = { collectionView, string, indexPath in
-            collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration,
-                                                                  for: indexPath)
+            let section = Section.allCases[indexPath.section]
+            switch section {
+            case .experiences:
+                return collectionView.dequeueConfiguredReusableSupplementary(using: invertedRegistration, for: indexPath)
+            default:
+                return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
+            }
+            
         }
         
         return dataSource

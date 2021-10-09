@@ -44,19 +44,25 @@ final class ContentHeader<View: ContentConfiguringHeader>: UICollectionReusableV
 typealias SectionHeader = ContentHeader<SectionHeaderView>
 
 class SectionHeaderView: ProgrammaticView, ContentConfiguringHeader {
+    
+    private lazy var style: ColorStyle = provideStyle()
 
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
 
     override func configure() {
         directionalLayoutMargins = .init(top: 24, leading: 0, bottom: 0, trailing: 0)
+        
+        let textColor: UIColor = style == .inverted ? .invertedLabel : . label
+        
         titleLabel.font = .custom(style: .title2)
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.numberOfLines = 0
-        titleLabel.textColor = .label
+        titleLabel.textColor = textColor
+        
         subtitleLabel.font = .custom(style: .title4)
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.textColor = .label
+        subtitleLabel.textColor = textColor
     }
 
     override func constrain() {
@@ -72,8 +78,16 @@ class SectionHeaderView: ProgrammaticView, ContentConfiguringHeader {
         titleLabel.text = content?.title
         subtitleLabel.text = content?.subtitle
     }
+    
+    func provideStyle() -> ColorStyle { .standard }
+    
 }
 
+typealias InvertedHeader = ContentHeader<InvertedHeaderView>
+
+final class InvertedHeaderView: SectionHeaderView {
+    override func provideStyle() -> ColorStyle { .inverted }
+}
 
 extension UICollectionView {
     enum ElementKind: String {
