@@ -27,14 +27,21 @@ final class InvertedBackGroundView: BackgroundView {
     }
 }
 
+final class SecondaryBackgroundView: BackgroundView {
+    override func provideBackgroundColor() -> UIColor? {
+        .secondarySystemBackground
+    }
+}
+
 enum BackgroundStyle: String, CaseIterable {
-    case inverted
+    case inverted, secondary
     
     var elementKind: String { "background.\(rawValue)" }
     
     var viewClass: AnyClass {
         switch self {
         case .inverted: return InvertedBackGroundView.self
+        case .secondary: return SecondaryBackgroundView.self
         }
     }
 }
