@@ -11,6 +11,7 @@
 		DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46E827118157005F9643 /* UIColor+Inverted.swift */; };
 		DE8E46EB27118E75005F9643 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46EA27118E75005F9643 /* BackgroundView.swift */; };
 		DE8E46ED2711BEAB005F9643 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46EC2711BEAB005F9643 /* FooterCell.swift */; };
+		DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */; };
 		DEC3A41026EF0BBD006DC0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3A40F26EF0BBD006DC0EC /* AppDelegate.swift */; };
 		DEC3A41226EF0BBD006DC0EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3A41126EF0BBD006DC0EC /* SceneDelegate.swift */; };
 		DEC3A41426EF0BBD006DC0EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */; };
@@ -38,6 +39,7 @@
 		DE8E46E827118157005F9643 /* UIColor+Inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Inverted.swift"; sourceTree = "<group>"; };
 		DE8E46EA27118E75005F9643 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DE8E46EC2711BEAB005F9643 /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
+		DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		DEC3A40C26EF0BBD006DC0EC /* AirBnb Home Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirBnb Home Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC3A40F26EF0BBD006DC0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC3A41126EF0BBD006DC0EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE8E46EF2711D03A005F9643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
+				DEC3A43426EF1E85006DC0EC /* HomeView.swift */,
+				DEC3A43626EF3423006DC0EC /* HeaderView.swift */,
+				DEC3A42926EF1C15006DC0EC /* ProgrammaticView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DEC3A40326EF0BBD006DC0EC = {
 			isa = PBXGroup;
 			children = (
@@ -92,14 +105,11 @@
 		DEC3A40E26EF0BBD006DC0EC /* AirBnb Home Clone */ = {
 			isa = PBXGroup;
 			children = (
+				DE8E46EF2711D03A005F9643 /* View */,
 				DEC3A43B26EF4001006DC0EC /* Collection View Elements */,
 				DEC3A43826EF3465006DC0EC /* Models */,
 				DEC3A42B26EF1D1B006DC0EC /* Extensions */,
 				DEC3A42526EF1B20006DC0EC /* Resources */,
-				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
-				DEC3A42926EF1C15006DC0EC /* ProgrammaticView.swift */,
-				DEC3A43426EF1E85006DC0EC /* HomeView.swift */,
-				DEC3A43626EF3423006DC0EC /* HeaderView.swift */,
 			);
 			path = "AirBnb Home Clone";
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 				DEC3A43226EF1E6C006DC0EC /* UIFont+Custom.swift */,
 				DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */,
 				DE8E46E827118157005F9643 /* UIColor+Inverted.swift */,
+				DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 				DED5912D26F05AEE002D1932 /* ContentCell.swift in Sources */,
 				DED5912E26F05AEE002D1932 /* SectionHeader.swift in Sources */,
 				DEC3A42D26EF1D33006DC0EC /* UIView+Helpers.swift in Sources */,
+				DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */,
 				DEC3A43D26EF401D006DC0EC /* SmallSquareCell.swift in Sources */,
 				DE8E46E727118064005F9643 /* UITraitCollection+Inverted.swift in Sources */,
 				DEC3A43326EF1E6C006DC0EC /* UIFont+Custom.swift in Sources */,

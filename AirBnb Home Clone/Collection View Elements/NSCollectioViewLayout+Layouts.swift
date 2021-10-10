@@ -1,8 +1,8 @@
 //
-//  NSCollectioViewLayout+Layouts.swift
-//  Airbnb Home
+//  UITextView+Helpers.swift
+//  AirBnb Home Clone
 //
-//  Created by Dillon McElhinney on 3/1/21.
+//  Created by 백성준 on 2021/10/09.
 //
 
 import UIKit

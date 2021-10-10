@@ -12,4 +12,8 @@ extension UIView {
     func addSubviews(_ views: UIView...) {
         views.forEach { view in addSubview(view) }
     }
+    
+    func setBackgroundAlpha(_ alpha: CGFloat) {
+        backgroundColor = backgroundColor?.withAlphaComponent(alpha)
+    }
 }
