@@ -89,7 +89,6 @@ extension HomeView {
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
-                
             default:
                 let registration = LargeSquareCell.registration()
                 return view.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)

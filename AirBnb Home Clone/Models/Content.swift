@@ -35,8 +35,8 @@ enum Section: Int, Hashable, CaseIterable {
 extension Section {
     var headerContent: Content? {
         switch self {
-        case .nearby: return nil
-        case .stays: return .init(title: "Live anywhere", subtitle: nil, image: nil)
+        case .nearby: return .init(title: "가까운 여행지 둘러보기", subtitle: nil, image: nil)
+        case .stays: return .init(title: "어디에서나, 여행은 살아보는 거야!", subtitle: nil, image: nil)
         case .experiences: return .init(title: "Experience the world",
                                         subtitle: "Unique activities with local experts—in person or online.",
                                         image: nil)
@@ -53,12 +53,12 @@ extension Section {
         switch self {
         case .nearby:
             return [
-                .init(title: "Estes Park", subtitle: "1.5 hour drive", image: "estes-park"),
-                .init(title: "Breckenridge", subtitle: "2.5 hour drive", image: "breckenridge"),
-                .init(title: "Grand Lake", subtitle: "3 hour drive", image: "grand-lake"),
-                .init(title: "Idaho Springs", subtitle: "2 hour drive", image: "idaho-springs"),
-                .init(title: "Glenwood Springs", subtitle: "4.5 hour drive", image: "glenwood-springs"),
-                .init(title: "Pagosa Springs", subtitle: "7.5 hour drive", image: "pagosa-springs"),
+                .init(title: "서울", subtitle: "차로 1시간 거리", image: "seoul"),
+                .init(title: "부산", subtitle: "차로 5시간 거리", image: "busan"),
+                .init(title: "양양군", subtitle: "차로 2.5시간 거리", image: "yangyang-gun"),
+                .init(title: "속초시", subtitle: "차로 2.5시간 거리", image: "sokcho-si"),
+                .init(title: "대구", subtitle: "차로 4시간 거리", image: "dae-gu"),
+                .init(title: "완주군", subtitle: "차로 3시간 거리", image: "wanju-gun"),
             ]
         case .stays:
             return [

@@ -24,7 +24,7 @@ extension UIFont {
     }
 
     private static var headline: UIFont {
-        UIFontMetrics(forTextStyle: .headline).scaledFont(for: .systemFont(ofSize: 14, weight: .semibold))
+        UIFontMetrics(forTextStyle: .headline).scaledFont(for: .systemFont(ofSize: 14, weight: .medium))
     }
     
     private static var subheadline: UIFont {
@@ -34,7 +34,7 @@ extension UIFont {
     
     private static var button: UIFont {
         UIFontMetrics(forTextStyle: .headline)
-            .scaledFont(for: .systemFont(ofSize: 13, weight: .semibold))
+            .scaledFont(for: .systemFont(ofSize: 13, weight: .regular))
     }
 
 }

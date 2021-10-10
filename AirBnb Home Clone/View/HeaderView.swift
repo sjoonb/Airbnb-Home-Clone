@@ -29,7 +29,7 @@ class HeaderView: ProgrammaticView {
     private let separator = UIView()
     
     private lazy var minHeight: CGFloat = { 44 + 12 + 12 + safeAreaInsets.top }()
-    private let maxHeight: CGFloat = 600
+    private let maxHeight: CGFloat = 550
     private var maxTopSpace: CGFloat = 40
     private var heightConstraint = NSLayoutConstraint()
     private var topSpaceConstraint = NSLayoutConstraint()
@@ -47,9 +47,10 @@ class HeaderView: ProgrammaticView {
         searchContainer.backgroundColor = .systemBackground
         searchContainer.setBackgroundAlpha(0)
 
+
         searchBar.backgroundColor = .secondarySystemBackground
         searchBar.layer.cornerRadius = 22
-        searchBar.setTitle("Where are you going?", for: .normal)
+        searchBar.setTitle("어디로 여행가세요?", for: .normal)
         searchBar.setTitleColor(.label, for: .normal)
         searchBar.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         searchBar.tintColor = .systemPink
@@ -57,23 +58,30 @@ class HeaderView: ProgrammaticView {
         searchBar.imageView?.contentMode = .scaleAspectFit
         searchBar.imageEdgeInsets = .init(top: 14, left: 0, bottom: 14, right: 4)
 
-        titleLabel.text = "Go\nNear"
-        titleLabel.textColor = .white
-        titleLabel.font = .custom(style: .largeTitle)
-        titleLabel.setLineHeightMultiple(to: 0.7)
+        titleLabel.text = "에어비앤비가\n여행지를 찾아드릴게요!"
+        titleLabel.textColor = .black
+        titleLabel.font = .custom(style: .headline)
+        titleLabel.font = titleLabel.font?.withSize(18)
         titleLabel.isScrollEnabled = false
         titleLabel.isEditable = false
         titleLabel.isSelectable = false
         titleLabel.backgroundColor = .clear
 
-        button.backgroundColor = .secondarySystemBackground
-        button.layer.cornerRadius = 6
-        button.setTitle("Explore nearby stays", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.titleLabel?.font = .custom(style: .button)
-        button.contentEdgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 24
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = CGSize(width: 0, height: 3.0)
+        button.layer.shadowRadius = 2
+        button.layer.borderWidth = 0.1
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.setTitle("유연한 검색", for: .normal)
+        button.setTitleColor(.purple, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        button.contentEdgeInsets = .init(top: 14, left: 30, bottom: 14, right: 30)
 
         separator.backgroundColor = .quaternaryLabel
+
     }
     
     override func constrain() {
@@ -100,11 +108,13 @@ class HeaderView: ProgrammaticView {
         searchBar.horizontalAnchors == searchContainer.horizontalAnchors + 24
         searchBar.bottomAnchor == searchContainer.bottomAnchor - 12
 
-        titleLabel.topAnchor == safeAreaLayoutGuide.topAnchor + 160
-        titleLabel.leadingAnchor == leadingAnchor + 24
-
-        button.topAnchor == titleLabel.bottomAnchor
-        button.leadingAnchor == titleLabel.leadingAnchor
+        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.topAnchor == safeAreaLayoutGuide.topAnchor + 240
+        titleLabel.widthAnchor == widthAnchor
+        
+        button.topAnchor == titleLabel.bottomAnchor + 8
+        button.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor).isActive = true
+//        button.widthAnchor == titleLabel.widthAnchor
 
         separator.heightAnchor == 1
         separator.horizontalAnchors == horizontalAnchors

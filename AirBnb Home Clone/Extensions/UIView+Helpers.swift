@@ -15,5 +15,6 @@ extension UIView {
     
     func setBackgroundAlpha(_ alpha: CGFloat) {
         backgroundColor = backgroundColor?.withAlphaComponent(alpha)
+
     }
 }
