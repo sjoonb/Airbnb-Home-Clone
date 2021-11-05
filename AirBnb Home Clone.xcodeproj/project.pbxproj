@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */; };
+		DE425478272A4716008342CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE425477272A4716008342CF /* GoogleService-Info.plist */; };
 		DE8E46E727118064005F9643 /* UITraitCollection+Inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */; };
 		DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46E827118157005F9643 /* UIColor+Inverted.swift */; };
 		DE8E46EB27118E75005F9643 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46EA27118E75005F9643 /* BackgroundView.swift */; };
@@ -32,9 +34,15 @@
 		DED5912D26F05AEE002D1932 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5912A26F05AEE002D1932 /* ContentCell.swift */; };
 		DED5912E26F05AEE002D1932 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5912B26F05AEE002D1932 /* SectionHeader.swift */; };
 		DED5912F26F05AEE002D1932 /* LargeSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5912C26F05AEE002D1932 /* LargeSquareCell.swift */; };
+		DEEBBC69273543990037B73F /* WishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBBC68273543990037B73F /* WishViewController.swift */; };
+		DEEBBC6C273545160037B73F /* WishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBBC6B273545160037B73F /* WishView.swift */; };
+		DEEBBC6E273565270037B73F /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBBC6D273565270037B73F /* loginView.swift */; };
+		DEEBBC702735652C0037B73F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBBC6F2735652C0037B73F /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTabBarController.swift; sourceTree = "<group>"; };
+		DE425477272A4716008342CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Inverted.swift"; sourceTree = "<group>"; };
 		DE8E46E827118157005F9643 /* UIColor+Inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Inverted.swift"; sourceTree = "<group>"; };
 		DE8E46EA27118E75005F9643 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,10 @@
 		DED5912A26F05AEE002D1932 /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		DED5912B26F05AEE002D1932 /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		DED5912C26F05AEE002D1932 /* LargeSquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeSquareCell.swift; sourceTree = "<group>"; };
+		DEEBBC68273543990037B73F /* WishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishViewController.swift; sourceTree = "<group>"; };
+		DEEBBC6B273545160037B73F /* WishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishView.swift; sourceTree = "<group>"; };
+		DEEBBC6D273565270037B73F /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginView.swift; path = "../../Library/Developer/Xcode/DerivedData/AirBnb_Home_Clone-cjhmwlzkpxwhcsadivvmjpsdragm/SourcePackages/checkouts/Anchorage/loginView.swift"; sourceTree = "<group>"; };
+		DEEBBC6F2735652C0037B73F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,20 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE8E46EF2711D03A005F9643 /* View */ = {
+		DE8E46EF2711D03A005F9643 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
 				DEC3A43426EF1E85006DC0EC /* HomeView.swift */,
 				DEC3A43626EF3423006DC0EC /* HeaderView.swift */,
+				DEEBBC6B273545160037B73F /* WishView.swift */,
+				DEEBBC6F2735652C0037B73F /* LoginView.swift */,
+				DEC3A43B26EF4001006DC0EC /* Collection View Elements */,
 				DEC3A42926EF1C15006DC0EC /* ProgrammaticView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DEC3A40326EF0BBD006DC0EC = {
 			isa = PBXGroup;
 			children = (
+				DEEBBC6D273565270037B73F /* loginView.swift */,
 				DEC3A40E26EF0BBD006DC0EC /* AirBnb Home Clone */,
 				DEC3A40D26EF0BBD006DC0EC /* Products */,
 			);
@@ -105,8 +120,8 @@
 		DEC3A40E26EF0BBD006DC0EC /* AirBnb Home Clone */ = {
 			isa = PBXGroup;
 			children = (
-				DE8E46EF2711D03A005F9643 /* View */,
-				DEC3A43B26EF4001006DC0EC /* Collection View Elements */,
+				DEEBBC6A273543A40037B73F /* ViewControllers */,
+				DE8E46EF2711D03A005F9643 /* Views */,
 				DEC3A43826EF3465006DC0EC /* Models */,
 				DEC3A42B26EF1D1B006DC0EC /* Extensions */,
 				DEC3A42526EF1B20006DC0EC /* Resources */,
@@ -122,6 +137,7 @@
 				DEC3A41526EF0BBD006DC0EC /* Main.storyboard */,
 				DEC3A42326EF1AF7006DC0EC /* Assets.xcassets */,
 				DEC3A41A26EF0BC0006DC0EC /* LaunchScreen.storyboard */,
+				DE425477272A4716008342CF /* GoogleService-Info.plist */,
 				DEC3A41D26EF0BC0006DC0EC /* Info.plist */,
 			);
 			path = Resources;
@@ -161,6 +177,16 @@
 				DE8E46EC2711BEAB005F9643 /* FooterCell.swift */,
 			);
 			path = "Collection View Elements";
+			sourceTree = "<group>";
+		};
+		DEEBBC6A273543A40037B73F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */,
+				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
+				DEEBBC68273543990037B73F /* WishViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC3A41C26EF0BC0006DC0EC /* LaunchScreen.storyboard in Resources */,
+				DE425478272A4716008342CF /* GoogleService-Info.plist in Resources */,
 				DEC3A42426EF1AF7006DC0EC /* Assets.xcassets in Resources */,
 				DEC3A41726EF0BBD006DC0EC /* Main.storyboard in Resources */,
 			);
@@ -241,6 +268,7 @@
 			files = (
 				DEC3A43526EF1E85006DC0EC /* HomeView.swift in Sources */,
 				DED5912D26F05AEE002D1932 /* ContentCell.swift in Sources */,
+				DEEBBC6E273565270037B73F /* loginView.swift in Sources */,
 				DED5912E26F05AEE002D1932 /* SectionHeader.swift in Sources */,
 				DEC3A42D26EF1D33006DC0EC /* UIView+Helpers.swift in Sources */,
 				DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */,
@@ -250,16 +278,20 @@
 				DEC3A43A26EF346F006DC0EC /* Content.swift in Sources */,
 				DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */,
 				DEC3A41426EF0BBD006DC0EC /* HomeViewController.swift in Sources */,
+				DEEBBC702735652C0037B73F /* LoginView.swift in Sources */,
+				DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */,
 				DE8E46ED2711BEAB005F9643 /* FooterCell.swift in Sources */,
 				DEC3A41026EF0BBD006DC0EC /* AppDelegate.swift in Sources */,
 				DEC3A43726EF3423006DC0EC /* HeaderView.swift in Sources */,
 				DEC3A43126EF1DC6006DC0EC /* UIImage+Helpers.swift in Sources */,
 				DEC3A42F26EF1D9A006DC0EC /* UIStackView+Helpers.swift in Sources */,
+				DEEBBC69273543990037B73F /* WishViewController.swift in Sources */,
 				DED5912F26F05AEE002D1932 /* LargeSquareCell.swift in Sources */,
 				DEC3A43F26EF52CD006DC0EC /* NSCollectioViewLayout+Layouts.swift in Sources */,
 				DEC3A42A26EF1C15006DC0EC /* ProgrammaticView.swift in Sources */,
 				DE8E46EB27118E75005F9643 /* BackgroundView.swift in Sources */,
 				DEC3A41226EF0BBD006DC0EC /* SceneDelegate.swift in Sources */,
+				DEEBBC6C273545160037B73F /* WishView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

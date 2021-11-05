@@ -21,9 +21,15 @@ extension NSCollectionLayoutSection {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitem: item,
                                                      count: 2)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .estimated(100))
+        let header = NSCollectionLayoutBoundarySupplementaryItem.header(layoutSize: headerSize)
+
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
+        section.boundarySupplementaryItems = [header]
         section.interGroupSpacing = 12
         section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
         return section

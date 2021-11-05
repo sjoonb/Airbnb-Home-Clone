@@ -10,5 +10,24 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "HomeViewController.updateList():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Section.nearby.stubData()">
+            </PersistentString>
+            <PersistentString
+               value = "Section.allCases">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "objc_release:(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "Section.allCases">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

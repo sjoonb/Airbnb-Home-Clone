@@ -34,6 +34,7 @@ class LargeSquareView: ProgrammaticView, ContentConfiguringView {
         let textColor: UIColor =  style == .inverted ? .invertedLabel : .label
         
         titleLabel.font = .custom(style: .headline)
+        titleLabel.font = titleLabel.font?.withSize(17)
         titleLabel.textColor = textColor
         
         subtitleLabel.font = .custom(style: .subheadline)

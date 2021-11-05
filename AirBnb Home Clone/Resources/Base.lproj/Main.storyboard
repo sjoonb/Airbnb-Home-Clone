@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Explore-->
+        <!--검색-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AirBnb_Home_Clone" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,29 +18,29 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="0bd-Nl-3qy"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="0bd-Nl-3qy" userLabel="검색"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1619" y="820"/>
         </scene>
-        <!--Saved-->
+        <!--위시리스트-->
         <scene sceneID="Mua-Hu-oIs">
             <objects>
-                <viewController id="vvJ-yg-efw" sceneMemberID="viewController">
+                <viewController id="vvJ-yg-efw" customClass="WishViewController" customModule="AirBnb_Home_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dKC-GA-NLm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Kmc-VT-Xoy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saved" image="heart" catalog="system" id="cJS-KJ-fCe"/>
+                    <tabBarItem key="tabBarItem" title="위시리스트" image="heart" catalog="system" id="cJS-KJ-fCe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laA-ou-IcY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-768" y="820"/>
         </scene>
-        <!--trips-->
+        <!--여행-->
         <scene sceneID="Ejh-Vo-ZgM">
             <objects>
                 <viewController id="v4G-3h-dpz" sceneMemberID="viewController">
@@ -50,13 +50,13 @@
                         <viewLayoutGuide key="safeArea" id="xmD-4J-3Hj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="trips" image="scribble.variable" catalog="system" id="Egc-0S-YqJ"/>
+                    <tabBarItem key="tabBarItem" title="여행" image="logo" id="Egc-0S-YqJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aj-0d-9aE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19" y="820"/>
         </scene>
-        <!--inbox-->
+        <!--메시지-->
         <scene sceneID="L92-yN-IrG">
             <objects>
                 <viewController id="OGA-nS-jDp" sceneMemberID="viewController">
@@ -66,13 +66,13 @@
                         <viewLayoutGuide key="safeArea" id="InP-l7-mkW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="inbox" image="message" catalog="system" id="uce-vg-hJk"/>
+                    <tabBarItem key="tabBarItem" title="메시지" image="message" catalog="system" id="uce-vg-hJk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqf-OR-aUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="825" y="820"/>
         </scene>
-        <!--Profile-->
+        <!--프로필-->
         <scene sceneID="KJK-e7-23S">
             <objects>
                 <viewController id="Bfy-84-hlx" sceneMemberID="viewController">
@@ -82,16 +82,16 @@
                         <viewLayoutGuide key="safeArea" id="UJG-jP-Zzz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="Ip0-gu-3vT"/>
+                    <tabBarItem key="tabBarItem" title="프로필" image="person.circle" catalog="system" id="Ip0-gu-3vT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiX-ly-33n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1622" y="820"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Airbnb Tab Bar Controller-->
         <scene sceneID="f0D-HP-ctI">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SWK-3C-rNg" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SWK-3C-rNg" customClass="AirbnbTabBarController" customModule="AirBnb_Home_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ue7-Es-udE">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -114,10 +114,10 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="logo" width="25" height="25"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="scribble.variable" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

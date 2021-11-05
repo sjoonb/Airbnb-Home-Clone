@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-import UIKit
-
 class ProgrammaticView: UIView {
 
     @available(*, unavailable, message: "Don't use init(coder:), override init(frame:) instead")

@@ -39,7 +39,7 @@ final class ContentCell<View: ContentConfiguringView>: UICollectionViewCell {
     
     static func registration(showSeparator: @escaping (IndexPath) -> Bool = { _ in false }) -> UICollectionView.CellRegistration<ContentCell<View>, Content> {
         UICollectionView.CellRegistration { cell, indexPath, content in
-            cell.configure(with: content)
+             cell.configure(with: content)
             if let cell = cell as? SeparatorShowing {
                 let shouldShow = showSeparator(indexPath)
                 cell.showSeparator(shouldShow)

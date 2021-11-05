@@ -62,10 +62,10 @@ extension Section {
             ]
         case .stays:
             return [
-                .init(title: "Entire homes", subtitle: nil, image: "entire-homes"),
-                .init(title: "Cabins and cottages", subtitle: nil, image: "cabins-cottages"),
-                .init(title: "Unique stays", subtitle: nil, image: "unique-stays"),
-                .init(title: "Pets welcome", subtitle: nil, image: "pets-welcome"),
+                .init(title: "자연생활을 만끽할 수 있는 숙소", subtitle: nil, image: "natural-homes"),
+                .init(title: "독특한 공간 ", subtitle: nil, image: "water-homes"),
+                .init(title: "집 전체", subtitle: nil, image: "whole-homes"),
+                .init(title: "반려동물 동반 가능", subtitle: nil, image: "pet-homes"),
             ]
         case .experiences:
             return [

@@ -8,7 +8,7 @@
 import Anchorage
 import UIKit
 
-protocol HeaderViewDelegate: AnyObject {
+protocol HeaderViewDelegate: AnyObject   {
     func updateStatusBarStyle(to style: UIStatusBarStyle)
 }
 
@@ -36,6 +36,7 @@ class HeaderView: ProgrammaticView {
     
     override func configure() {
         backgroundColor = .black
+        
 
         card.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         card.layer.cornerRadius = 20

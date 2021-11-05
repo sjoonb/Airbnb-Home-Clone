@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>97463139481-lll130nmd1tvrpmvbgtjpi1kdf40mkme.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.97463139481-lll130nmd1tvrpmvbgtjpi1kdf40mkme</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCAjORe0B4F_xS7gfonxhGaVRyeJ_jqhe4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>97463139481</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.codewithsjoonb.AirBnb-Home</string>
+	<key>PROJECT_ID</key>
+	<string>airbnb-clone-dodream</string>
+	<key>STORAGE_BUCKET</key>
+	<string>airbnb-clone-dodream.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:97463139481:ios:afc4f1690d4334dbcf4c08</string>
+</dict>
+</plist>
