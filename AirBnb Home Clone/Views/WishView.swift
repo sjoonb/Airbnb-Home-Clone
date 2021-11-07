@@ -10,7 +10,7 @@ import UIKit
 
 class WishView: ProgrammaticView {
     
-    private lazy var loginView = UIView()
+    private lazy var loginView: LoginView = .init()
  
     override func configure() {
         backgroundColor = .systemBlue

@@ -43,7 +43,7 @@
         <!--여행-->
         <scene sceneID="Ejh-Vo-ZgM">
             <objects>
-                <viewController id="v4G-3h-dpz" sceneMemberID="viewController">
+                <viewController id="v4G-3h-dpz" customClass="TravelViewController" customModule="AirBnb_Home_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34v-fS-7xO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--메시지-->
         <scene sceneID="L92-yN-IrG">
             <objects>
-                <viewController id="OGA-nS-jDp" sceneMemberID="viewController">
+                <viewController id="OGA-nS-jDp" customClass="MessageViewController" customModule="AirBnb_Home_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rwb-QK-S0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
