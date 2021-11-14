@@ -9,17 +9,17 @@ import UIKit
 
 class MessageViewController: UIViewController {
     
-    private lazy var loginView: LoginView = .init()
+    private lazy var preLoginView: PreLoginView = .init()
     
         override func loadView() {
-            view = loginView
+            view = preLoginView
             update()
 
         }
     
     private func  update() {
         let loginContent = LoginSection.messageView.stubData()
-        loginView.configure(with: loginContent)
+        preLoginView.configure(with: loginContent)
     }
     
 }

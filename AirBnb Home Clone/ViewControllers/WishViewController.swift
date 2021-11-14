@@ -7,22 +7,49 @@
 
 import UIKit
 
-class WishViewController: UIViewController {
+class WishViewController: UIViewController, PreLoginViewDelegate {
     
 
 //    private lazy var contentView: WishView = .init()
-    private lazy var loginView: LoginView = .init()
-    
-        override func loadView() {
-            view = loginView
-            update()
+    private lazy var preLoginView: PreLoginView = .init()
 
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    
+    }
+    
+    override func loadView() {
+        view = preLoginView
+        preLoginView.delegate = self
+        update()
+
+    }
     
     private func  update() {
         let loginContent = LoginSection.wishView.stubData()
-        loginView.configure(with: loginContent)
+        preLoginView.configure(with: loginContent)
     }
+    
+    @IBAction func openSheet() {
+        // Create the view controller.
+
+        let loginViewController = LoginViewController(nibName: nil, bundle: nil)
+        
+        let navLoginViewController = UINavigationController(rootViewController: loginViewController)
+        
+        present(navLoginViewController, animated: true, completion: nil)
+    }
+    
     
 }
 
+//#if canImport(SwiftUI) && DEBUG
+//import SwiftUI
+//
+//struct WishViewControllerPreview: PreviewProvider {
+//    static var previews: some View {
+//            WishViewController().showPreview()
+//        }
+//}
+//#endif

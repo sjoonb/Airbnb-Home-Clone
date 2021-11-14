@@ -1,96 +1,193 @@
 //
-//  loginView.swift
+//  LoginView.swift
 //  AirBnb Home Clone
 //
-//  Created by 백성준 on 2021/11/05.
+//  Created by 백성준 on 2021/11/07.
 //
 
 import UIKit
 import Anchorage
 
-
-class LoginView: ProgrammaticView {
-    weak var delegate: AnyObject?
+class LoginView: ProgrammaticView, DataSourceProviderDelegate {
     
-    private let titleLabel = UILabel()
-    private let separator = UIView()
-    private let subtitleLabel = UILabel()
-    private let textLabel = UILabel()
-    private let loginButton = UIButton(type: .roundedRect)
+
+    var dataSourceProvider: DataSourceProvider<AuthProvider>!
+
+    private let scrollView = UIScrollView()
+    private let topLoginView = TopLoginView()
+    private let separatorStack = UIStackView()
+    private let leftLine = UIView()
+    private let rightLine = UIView()
+    private let orLabel = UILabel()
+    private lazy var tableView = UITableView(frame: .zero, style: .insetGrouped)
+    
+    // MARK: - DataSourceProviderDelegate
+
+    func didSelectRowAt(_ indexPath: IndexPath, on tableView: UITableView) {
+        let item = dataSourceProvider.item(at: indexPath)
+        
+        let providerName = item.title!
+        
+        guard let provider = AuthProvider(rawValue: providerName) else {
+            return
+        }
+        
+        switch provider {
+        case .email:
+            print("email tapped")
+            
+        case .google:
+            print("google tapped")
+            
+        case .apple:
+            print("apple tapped")
+            
+        case .facebook:
+            print("google tapped")
+            
+        }
+
+    }
+    
+    
+    
+
+    // MARK: - Configure & Constrain
     
     override func configure() {
-        backgroundColor = .systemBackground
+        configureDataSourceProvider()
         
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .medium)
-//        titleLabel.text = "위시리스트"
-
-        separator.backgroundColor = .quaternaryLabel
+        let scrollViewHeight = 700
+        scrollView.contentSize = CGSize(width: bounds.size.width, height: CGFloat(scrollViewHeight))
         
-        subtitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-//        subtitleLabel.text = "아직 저장 항목 없음"
-
-        textLabel.textColor = UIColor.gray
-        textLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-//        textLabel.text = "가슴 설레는 다음 여행 계획을 세워보세요. 검색 중에 마음에 드는 숙소나 즐길 거리를 저장하려면 하트 아이콘을 누르세요."
-        textLabel.numberOfLines = 0
+        separatorStack.axis = .horizontal
+        separatorStack.backgroundColor = .white
         
-        loginButton.layer.cornerRadius = 10
-        loginButton.setTitle("로그인", for: .normal)
-        loginButton.backgroundColor = .systemPink
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        loginButton.contentEdgeInsets = .init(top: 14, left: 28, bottom: 14, right: 28)
-
+        leftLine.backgroundColor = .quaternaryLabel
+        
+        rightLine.backgroundColor = .quaternaryLabel
+        
+        orLabel.text = "또는"
+        orLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        orLabel.textColor = .darkGray
+        
+        topLoginView.backgroundColor = .white
+        tableView.backgroundColor = .white
     }
     
     override func constrain() {
-        addSubviews(titleLabel, separator, subtitleLabel, textLabel, subtitleLabel, textLabel, loginButton)
-
-        titleLabel.centerYAnchor == centerYAnchor * 0.25
-//        titleLabel.topAnchor == topAnchor
-        titleLabel.leadingAnchor == leadingAnchor + 30
+        addSubviews(scrollView)
         
-        separator.topAnchor == titleLabel.bottomAnchor + 60
-        separator.centerXAnchor == centerXAnchor
-        separator.heightAnchor == 1
-        separator.widthAnchor == widthAnchor - 60
+        scrollView.addSubviews(topLoginView, separatorStack, tableView)
+        separatorStack.addSubviews(leftLine, rightLine, orLabel)
         
-        subtitleLabel.topAnchor == separator.bottomAnchor + 40
-        subtitleLabel.leadingAnchor == leadingAnchor + 30
+        scrollView.topAnchor == topAnchor
+        scrollView.horizontalAnchors == horizontalAnchors
+        scrollView.bottomAnchor == bottomAnchor
         
-        textLabel.topAnchor == subtitleLabel.bottomAnchor + 10
-        textLabel.leadingAnchor == leadingAnchor + 30
-        textLabel.trailingAnchor == trailingAnchor - 30
+        
+//        label.topAnchor == scrollView.topAnchor + 30
+//        label.leadingAnchor == scrollView.leadingAnchor
+        topLoginView.topAnchor == scrollView.topAnchor
+        topLoginView.horizontalAnchors == horizontalAnchors
+        topLoginView.heightAnchor == 240
+        
+        separatorStack.topAnchor == topLoginView.bottomAnchor
+        separatorStack.horizontalAnchors == horizontalAnchors
+        separatorStack.heightAnchor == 70
 
-        loginButton.topAnchor == textLabel.bottomAnchor + 20
-        loginButton.leadingAnchor == leadingAnchor + 30
+        leftLine.centerYAnchor == separatorStack.centerYAnchor
+//        leftLine.topAnchor == separatorStack.topAnchor + 20
+        leftLine.leadingAnchor == separatorStack.leadingAnchor + 20
+        leftLine.trailingAnchor == separatorStack.centerXAnchor - 20
+        leftLine.heightAnchor == 1
+        
+        orLabel.centerYAnchor == leftLine.centerYAnchor
+        orLabel.centerXAnchor == separatorStack.centerXAnchor
 
+        rightLine.topAnchor == leftLine.topAnchor
+        rightLine.leadingAnchor == separatorStack.centerXAnchor + 20
+        rightLine.trailingAnchor == separatorStack.trailingAnchor - 20
+        rightLine.heightAnchor == 1
+
+        tableView.topAnchor == separatorStack.bottomAnchor
+        tableView.horizontalAnchors == horizontalAnchors
+        tableView.bottomAnchor == bottomAnchor
+        
     }
     
-    func configure(with content: LoginContent?) {
-        titleLabel.text = content?.title
-        subtitleLabel.text = content?.subtitle
-        textLabel.text = content?.text
+    private func configureDataSourceProvider() {
+        dataSourceProvider = DataSourceProvider(dataSource: AuthProvider.sections, tableView: tableView)
+        dataSourceProvider.delegate = self
     }
 }
 
 
+class TopLoginView: ProgrammaticView {
+
+    private let phoneNumberField = UITextField()
+    private let descriptionLabel = UILabel()
+    private let continueButton = UIButton()
+    
+    override func configure() {
+        phoneNumberField.attributedPlaceholder = NSAttributedString(
+            string: "전화번호",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
+
+        phoneNumberField.font = UIFont.systemFont(ofSize: 17)
+        phoneNumberField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: bounds.height))
+        phoneNumberField.leftViewMode = .always
+
+        phoneNumberField.layer.borderColor = UIColor.systemGray.cgColor
+        phoneNumberField.layer.borderWidth = 1
+        phoneNumberField.layer.cornerRadius = 10
+        
+        descriptionLabel.textColor = UIColor.darkGray
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.text = "전화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메시지 요금 및 데이터 요금이 부과됩니다."
+        
+        continueButton.setTitle("계속", for: .normal)
+        continueButton.layer.cornerRadius = 10
+        continueButton.backgroundColor = .systemPink
+        continueButton.setTitleColor(.white, for: .normal)
+        continueButton.titleLabel?.font =  UIFont.systemFont(ofSize: 18, weight: .semibold)
+
+    }
+    
+    override func constrain() {
+        frame = CGRect(x: 0 , y: 0, width: bounds.width, height: 200)
+        addSubviews(phoneNumberField, descriptionLabel, continueButton)
+        
+        phoneNumberField.topAnchor == topAnchor + 30
+        phoneNumberField.leadingAnchor == leadingAnchor + 30
+        phoneNumberField.trailingAnchor == trailingAnchor - 30
+        phoneNumberField.heightAnchor == 60
+        
+        descriptionLabel.topAnchor == phoneNumberField.bottomAnchor + 20
+        descriptionLabel.leadingAnchor == leadingAnchor + 35
+        descriptionLabel.trailingAnchor == trailingAnchor - 35
+        
+        continueButton.topAnchor == descriptionLabel.bottomAnchor + 30
+        continueButton.leadingAnchor == leadingAnchor + 30
+        continueButton.trailingAnchor == trailingAnchor - 30
+        continueButton.heightAnchor == 60
+    
+    }
+    
+}
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-struct LoginViewPreview: PreviewProvider{
+struct LoginViewPreview: PreviewProvider {
     static var previews: some View {
         Group {
             UIViewPreview {
                 let view = LoginView()
-                view.configure(with: LoginSection.wishView.stubData())
                 return view
             }.previewDevice("iPhone 11").previewLayout(.sizeThatFits)
-            UIViewPreview {
-                let view = LoginView()
-                view.configure(with: LoginSection.wishView.stubData())
-                return view
-            }.previewDevice("iPhone SE (2nd generation)").previewLayout(.sizeThatFits)
         }
     }
 }

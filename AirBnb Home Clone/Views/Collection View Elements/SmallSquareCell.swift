@@ -21,7 +21,7 @@ final class SmallSquareView: ProgrammaticView, ContentConfiguringView {
         imageView.backgroundColor = .secondarySystemFill
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
-        
+        		
         stack.axis = .vertical
         stack.spacing = 8
         
