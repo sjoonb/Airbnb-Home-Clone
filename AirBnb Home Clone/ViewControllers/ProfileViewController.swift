@@ -7,6 +7,12 @@
 
 import UIKit
 
-class ProfileViewController {
+class ProfileViewController: UIViewController {
+    private lazy var preLoginView: ProfilePreLoginView = .init()
     
+        override func loadView() {
+            view = preLoginView
+        }
+
+
 }

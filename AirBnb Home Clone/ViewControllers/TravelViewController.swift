@@ -13,11 +13,11 @@ class TravelViewController: UIViewController {
 
         override func loadView() {
             view = preLoginView
-            update()
+            updatePreLoginViewContent()
 
         }
     
-    private func  update() {
+    private func updatePreLoginViewContent() {
         let loginContent = LoginSection.travelView.stubData()
         preLoginView.configure(with: loginContent)
     }

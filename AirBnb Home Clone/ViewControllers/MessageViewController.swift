@@ -13,11 +13,11 @@ class MessageViewController: UIViewController {
     
         override func loadView() {
             view = preLoginView
-            update()
+            updatePreLoginViewContent()
 
         }
     
-    private func  update() {
+    private func  updatePreLoginViewContent() {
         let loginContent = LoginSection.messageView.stubData()
         preLoginView.configure(with: loginContent)
     }

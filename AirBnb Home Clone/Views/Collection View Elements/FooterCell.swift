@@ -35,6 +35,7 @@ final class FooterView: ProgrammaticView, ContentConfiguringView {
         stack.horizontalAnchors == horizontalAnchors
         stack.verticalAnchors == verticalAnchors + 28
         
+        
         separator.topAnchor == bottomAnchor
         separator.horizontalAnchors == stack.horizontalAnchors
         separator.heightAnchor == 1

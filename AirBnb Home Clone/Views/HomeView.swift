@@ -66,31 +66,52 @@ extension HomeView {
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }
     
+    
+
+
+    
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section, Content> {
+        let smallSuqareCellRegistration = UICollectionView.CellRegistration<SmallSquareCell, Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+        
+        let invertedSuqareCellRegistration = UICollectionView.CellRegistration<LargeSquareCell, Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+        
+        let footerSuqareCellRegistration = UICollectionView.CellRegistration<FooterCell, Content> { cell, indexPath, content in
+            cell.configure(with: content)
+                if let cell = cell as? SeparatorShowing {
+                    let shouldShow = indexPath.item % 4 != 3
+                    cell.showSeparator(shouldShow)
+                }
+        }
+        
+        let largeSuqareCellRegistration = UICollectionView.CellRegistration<LargeSquareCell, Content> { cell, indexPath, content in
+            cell.configure(with: content)
+        }
+    
         let dataSource = UICollectionViewDiffableDataSource<Section, Content>(
             collectionView: collectionView) { view, indexPath, item in
-            // closure 로 함수를 정의해줬기 때문에, 그 함수가 여기서 계속 실행이 된다는 건가?
             let section = Section.allCases[indexPath.section]
             switch section {
             case .nearby:
-                let registration = SmallSquareCell.registration()
+                let registration = smallSuqareCellRegistration
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
             case .experiences:
-                let registration = InvertedLargeSuqareCell.registration()
+                let registration = invertedSuqareCellRegistration
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
             case .info:
-                let registration = FooterCell.registration() { indexPath in
-                    indexPath.item % 4 != 3
-                }
+                let registration = footerSuqareCellRegistration
                 return view.dequeueConfiguredReusableCell(using: registration,
                                                           for: indexPath,
                                                           item: item)
             default:
-                let registration = LargeSquareCell.registration()
+                let registration = largeSuqareCellRegistration
                 return view.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: item)
             }
         }

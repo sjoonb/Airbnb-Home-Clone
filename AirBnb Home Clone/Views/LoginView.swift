@@ -8,11 +8,19 @@
 import UIKit
 import Anchorage
 
+protocol LoginViewDelegate: AnyObject {
+    func dismissSheet()
+    func didSelectItem(_ item: AuthProvider.AuthSection.Item)
+}
+
 class LoginView: ProgrammaticView, DataSourceProviderDelegate {
     
-
+    weak var delegate: LoginViewDelegate?
     var dataSourceProvider: DataSourceProvider<AuthProvider>!
 
+    private let navigationLabel = UILabel()
+    private let doneButton = UIButton()
+    private let separator = UIView()
     private let scrollView = UIScrollView()
     private let topLoginView = TopLoginView()
     private let separatorStack = UIStackView()
@@ -21,41 +29,38 @@ class LoginView: ProgrammaticView, DataSourceProviderDelegate {
     private let orLabel = UILabel()
     private lazy var tableView = UITableView(frame: .zero, style: .insetGrouped)
     
+    
     // MARK: - DataSourceProviderDelegate
 
     func didSelectRowAt(_ indexPath: IndexPath, on tableView: UITableView) {
         let item = dataSourceProvider.item(at: indexPath)
-        
-        let providerName = item.title!
-        
-        guard let provider = AuthProvider(rawValue: providerName) else {
-            return
-        }
-        
-        switch provider {
-        case .email:
-            print("email tapped")
-            
-        case .google:
-            print("google tapped")
-            
-        case .apple:
-            print("apple tapped")
-            
-        case .facebook:
-            print("google tapped")
-            
-        }
-
+        delegate?.didSelectItem(item)
+    }
+    
+    @IBAction func doneButtonTapped() {
+        delegate?.dismissSheet()
     }
     
     
-    
-
     // MARK: - Configure & Constrain
     
     override func configure() {
         configureDataSourceProvider()
+        
+        backgroundColor = .white
+ 
+        navigationLabel.text = "로그인 또는 회원가입"
+        navigationLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        navigationLabel.textColor = .black
+        
+        let largeFont = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        let configuration = UIImage.SymbolConfiguration(font: largeFont)
+            
+        doneButton.setImage(UIImage(systemName: "xmark", withConfiguration: configuration), for: .normal)
+        doneButton.tintColor = .black
+        doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+        
+        separator.backgroundColor = .quaternaryLabel
         
         let scrollViewHeight = 700
         scrollView.contentSize = CGSize(width: bounds.size.width, height: CGFloat(scrollViewHeight))
@@ -68,7 +73,7 @@ class LoginView: ProgrammaticView, DataSourceProviderDelegate {
         rightLine.backgroundColor = .quaternaryLabel
         
         orLabel.text = "또는"
-        orLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        orLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         orLabel.textColor = .darkGray
         
         topLoginView.backgroundColor = .white
@@ -76,12 +81,21 @@ class LoginView: ProgrammaticView, DataSourceProviderDelegate {
     }
     
     override func constrain() {
-        addSubviews(scrollView)
-        
+        addSubviews(navigationLabel, doneButton, separator, scrollView)
         scrollView.addSubviews(topLoginView, separatorStack, tableView)
         separatorStack.addSubviews(leftLine, rightLine, orLabel)
         
-        scrollView.topAnchor == topAnchor
+        navigationLabel.topAnchor == topAnchor + 30
+        navigationLabel.centerXAnchor == centerXAnchor
+        
+        doneButton.leadingAnchor == leadingAnchor + 30
+        doneButton.centerYAnchor == navigationLabel.centerYAnchor
+        
+        separator.topAnchor == navigationLabel.bottomAnchor + 15
+        separator.horizontalAnchors == horizontalAnchors
+        separator.heightAnchor == 1
+        
+        scrollView.topAnchor == separator.bottomAnchor
         scrollView.horizontalAnchors == horizontalAnchors
         scrollView.bottomAnchor == bottomAnchor
         
@@ -177,6 +191,7 @@ class TopLoginView: ProgrammaticView {
     }
     
 }
+
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
