@@ -13,7 +13,6 @@ class AirbnbTabBarController: UITabBarController {
     override func viewDidLoad() {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
 
-        
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.quaternaryLabel.cgColor
 

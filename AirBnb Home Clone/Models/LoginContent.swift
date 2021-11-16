@@ -20,7 +20,7 @@ struct LoginContent {
 }
 
 enum LoginSection {
-    case wishView, travelView, messageView
+    case wishView, travelView, messageView, profileView
 }
 
 extension LoginSection {
@@ -32,6 +32,8 @@ extension LoginSection {
             return .init(title: "여행", subtitle: "아직 여행 없음", text: "다시 여행을 떠나실 준비가 되면 에어비앤비에서 도와드리겠습니다.")
         case .messageView:
             return .init(title: "메시지", subtitle: "메시지를 보려면 로그인하세요", text: "로그인하면 여기에 호스트가 보낸 메시지가 표시됩니다.")
+        case .profileView:
+            return .init(title: "프로필", subtitle: "다음번 여행을 계획하려면 로그인하세요.", text: "에어비앤비 계정이 없으신가요? 회원 가입")
         }
     }
 }

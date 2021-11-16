@@ -9,12 +9,11 @@ import UIKit
 import Anchorage
 
 
-class ProfilePreLoginView: ProgrammaticView {
+class ProfilePreLoginView: ProgrammaticView, AirbnbPreViewProtocol {
     
     weak var delegate: PreLoginViewDelegate?
     
     private let titleLabel = UILabel()
-    private let separator = UIView()
     private let subtitleLabel = UILabel()
     private let textLabel = UILabel()
     private let loginButton = UIButton(type: .roundedRect)
@@ -25,22 +24,19 @@ class ProfilePreLoginView: ProgrammaticView {
         
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .medium)
 
-        separator.backgroundColor = .quaternaryLabel
-        
-        subtitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-
-        textLabel.textColor = UIColor.gray
-        textLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        textLabel.numberOfLines = 0
+        subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         
         loginButton.layer.cornerRadius = 10
         loginButton.setTitle("로그인", for: .normal)
         loginButton.backgroundColor = .systemPink
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        loginButton.contentEdgeInsets = .init(top: 14, left: 28, bottom: 14, right: 28)
-
         loginButton.addTarget(self, action: #selector(loginButtonTapped(sender:)), for: .touchUpInside)
+        
+        textLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        textLabel.textColor = .darkGray
+        textLabel.numberOfLines = 0
+
     }
     
     @objc func loginButtonTapped(sender: UIButton!) {
@@ -48,26 +44,25 @@ class ProfilePreLoginView: ProgrammaticView {
     }
     
     override func constrain() {
-        addSubviews(titleLabel, separator, subtitleLabel, textLabel, subtitleLabel, textLabel, loginButton)
+        addSubviews(titleLabel, subtitleLabel, loginButton, textLabel)
 
         titleLabel.centerYAnchor == centerYAnchor * 0.25
 //        titleLabel.topAnchor == topAnchor
         titleLabel.leadingAnchor == leadingAnchor + 30
         
-        separator.topAnchor == titleLabel.bottomAnchor + 60
-        separator.centerXAnchor == centerXAnchor
-        separator.heightAnchor == 1
-        separator.widthAnchor == widthAnchor - 60
-        
-        subtitleLabel.topAnchor == separator.bottomAnchor + 40
+        subtitleLabel.topAnchor == titleLabel.bottomAnchor + 10
         subtitleLabel.leadingAnchor == leadingAnchor + 30
         
-        textLabel.topAnchor == subtitleLabel.bottomAnchor + 10
+        loginButton.topAnchor == subtitleLabel.bottomAnchor + 40
+        loginButton.leadingAnchor == leadingAnchor + 30
+        loginButton.trailingAnchor == trailingAnchor - 30
+        loginButton.heightAnchor == 50
+        
+        textLabel.topAnchor == loginButton.bottomAnchor + 20
         textLabel.leadingAnchor == leadingAnchor + 30
         textLabel.trailingAnchor == trailingAnchor - 30
 
-        loginButton.topAnchor == textLabel.bottomAnchor + 20
-        loginButton.leadingAnchor == leadingAnchor + 30
+
 
     }
     

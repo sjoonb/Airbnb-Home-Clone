@@ -6,21 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
-class TravelViewController: UIViewController {
-    
-    private lazy var preLoginView: PreLoginView = .init()
-
-        override func loadView() {
-            view = preLoginView
-            updatePreLoginViewContent()
-
-        }
-    
-    private func updatePreLoginViewContent() {
+class TravelViewController: AirbnbViewController<PreLoginView, WishView> {
+    override func updatePreLoginViewContent() {
         let loginContent = LoginSection.travelView.stubData()
         preLoginView.configure(with: loginContent)
     }
-    
 }
-

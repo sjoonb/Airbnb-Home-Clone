@@ -75,16 +75,14 @@ extension HomeView {
             cell.configure(with: content)
         }
         
-        let invertedSuqareCellRegistration = UICollectionView.CellRegistration<LargeSquareCell, Content> { cell, indexPath, content in
+        let invertedSuqareCellRegistration = UICollectionView.CellRegistration<InvertedLargeSuqareCell, Content> { cell, indexPath, content in
             cell.configure(with: content)
         }
         
         let footerSuqareCellRegistration = UICollectionView.CellRegistration<FooterCell, Content> { cell, indexPath, content in
-            cell.configure(with: content)
-                if let cell = cell as? SeparatorShowing {
-                    let shouldShow = indexPath.item % 4 != 3
-                    cell.showSeparator(shouldShow)
-                }
+            cell.configure(with: content)    
+            let shouldShow = indexPath.item % 4 != 3
+            cell.showSeparator(shouldShow)
         }
         
         let largeSuqareCellRegistration = UICollectionView.CellRegistration<LargeSquareCell, Content> { cell, indexPath, content in

@@ -11,7 +11,7 @@ import Firebase
 
 
 
-class WishView: ProgrammaticView {
+class WishView: ProgrammaticView, AirbnbMainViewProtocol {
     
     weak var delegate: LoginViewControllerDelegate?
     

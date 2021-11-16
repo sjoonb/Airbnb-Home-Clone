@@ -8,10 +8,14 @@
 import UIKit
 import Firebase
 
+private var _user: User?
+var user: User? {
+  get { _user ?? Auth.auth().currentUser }
+  set { _user = newValue }
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

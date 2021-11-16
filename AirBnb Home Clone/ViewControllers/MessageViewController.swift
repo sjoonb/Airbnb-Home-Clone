@@ -7,20 +7,12 @@
 
 import UIKit
 
-class MessageViewController: UIViewController {
-    
-    private lazy var preLoginView: PreLoginView = .init()
-    
-        override func loadView() {
-            view = preLoginView
-            updatePreLoginViewContent()
-
-        }
-    
-    private func  updatePreLoginViewContent() {
+class MessageViewController: AirbnbViewController<PreLoginView, WishView> {
+    override func updatePreLoginViewContent() {
         let loginContent = LoginSection.messageView.stubData()
         preLoginView.configure(with: loginContent)
     }
-    
 }
+
+
 

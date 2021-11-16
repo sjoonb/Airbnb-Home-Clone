@@ -50,6 +50,7 @@
 		DEEBBC69273543990037B73F /* WishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBBC68273543990037B73F /* WishViewController.swift */; };
 		DEF1CA6027393633001BA698 /* AuthContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1CA5F27393633001BA698 /* AuthContent.swift */; };
 		DEF1CA62273936F0001BA698 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1CA61273936F0001BA698 /* Content.swift */; };
+		DEF8588A2743CAC800034F97 /* AirbnbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF858892743CAC800034F97 /* AirbnbViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		DEEBBC68273543990037B73F /* WishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishViewController.swift; sourceTree = "<group>"; };
 		DEF1CA5F27393633001BA698 /* AuthContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContent.swift; sourceTree = "<group>"; };
 		DEF1CA61273936F0001BA698 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		DEF858892743CAC800034F97 /* AirbnbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */,
+				DEF858892743CAC800034F97 /* AirbnbViewController.swift */,
 				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
 				DEEBBC68273543990037B73F /* WishViewController.swift */,
 				DE4D8F082737C908008FB36C /* TravelViewController.swift */,
@@ -402,6 +405,7 @@
 				DE4D8F0B2737C915008FB36C /* MessageViewController.swift in Sources */,
 				DE4D8F0D2737C923008FB36C /* ProfileViewController.swift in Sources */,
 				DE4D8F2F2737DC72008FB36C /* LoginViewController.swift in Sources */,
+				DEF8588A2743CAC800034F97 /* AirbnbViewController.swift in Sources */,
 				DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */,
 				DE0FF9CA2742F33800E101A5 /* ProfilePreLoginView.swift in Sources */,
 				DEC3A41426EF0BBD006DC0EC /* HomeViewController.swift in Sources */,

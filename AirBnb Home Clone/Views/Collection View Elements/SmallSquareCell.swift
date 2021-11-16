@@ -10,6 +10,7 @@ import UIKit
 
 typealias SmallSquareCell = ContentCell<SmallSquareView>
 
+
 final class SmallSquareView: ProgrammaticView, ContentConfiguringView {
     
     private let imageView = UIImageView()

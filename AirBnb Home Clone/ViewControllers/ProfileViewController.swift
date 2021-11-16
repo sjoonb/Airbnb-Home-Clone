@@ -7,12 +7,10 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    private lazy var preLoginView: ProfilePreLoginView = .init()
-    
-        override func loadView() {
-            view = preLoginView
-        }
-
-
+class ProfileViewController: AirbnbViewController<ProfilePreLoginView, WishView> {
+    override func updatePreLoginViewContent() {
+        let loginContent = LoginSection.profileView.stubData()
+        preLoginView.configure(with: loginContent)
+    }
 }
+
