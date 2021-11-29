@@ -16,8 +16,6 @@ class AirbnbTabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.quaternaryLabel.cgColor
 
-        
-
     }
     
 }

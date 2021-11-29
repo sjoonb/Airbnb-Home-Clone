@@ -5,7 +5,8 @@
 //  Created by 백성준 on 2021/09/13.
 //
 
-import Foundation
+import UIKit
+
 
 struct Content: Hashable {
     enum Style {

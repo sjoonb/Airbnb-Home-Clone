@@ -171,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				DEC79D6C2740CC9F0086F8B9 /* AirBnb Home Clone.entitlements */,
+				DEC3A40F26EF0BBD006DC0EC /* AppDelegate.swift */,
+				DEC3A41126EF0BBD006DC0EC /* SceneDelegate.swift */,
 				DEEBBC6A273543A40037B73F /* ViewControllers */,
 				DE8E46EF2711D03A005F9643 /* Views */,
 				DEC3A43826EF3465006DC0EC /* Models */,
@@ -186,11 +188,9 @@
 		DEC3A42526EF1B20006DC0EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DEC3A40F26EF0BBD006DC0EC /* AppDelegate.swift */,
-				DEC3A41126EF0BBD006DC0EC /* SceneDelegate.swift */,
 				DEC3A41526EF0BBD006DC0EC /* Main.storyboard */,
-				DEC3A42326EF1AF7006DC0EC /* Assets.xcassets */,
 				DEC3A41A26EF0BC0006DC0EC /* LaunchScreen.storyboard */,
+				DEC3A42326EF1AF7006DC0EC /* Assets.xcassets */,
 				DE425477272A4716008342CF /* GoogleService-Info.plist */,
 				DEC3A41D26EF0BC0006DC0EC /* Info.plist */,
 			);
