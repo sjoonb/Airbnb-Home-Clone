@@ -155,7 +155,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate,
             // At this point, our user is signed in
             // so we advance to the User View Controller
             self.dismissSheet()
-            self.delegate?.updateView()
+//            self.delegate?.updateView()
             
         }
     }
@@ -226,7 +226,7 @@ import SwiftUI
 
 struct WishViewControllerPreview: PreviewProvider {
     static var previews: some View {
-            WishViewController().showPreview()
+            PreWishViewController().showPreview()
         }
 }
 #endif

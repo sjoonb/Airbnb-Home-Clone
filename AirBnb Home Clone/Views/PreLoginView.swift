@@ -12,7 +12,7 @@ protocol PreLoginViewDelegate: AnyObject {
     func openSheet()
 }
 
-class PreLoginView: ProgrammaticView, AirbnbPreViewProtocol {
+class PreLoginView: ProgrammaticView, PreViewProtocol {
     
     weak var delegate: PreLoginViewDelegate?
     

@@ -8,10 +8,10 @@
 import UIKit
 import Firebase
 
-
-class WishViewController: AirbnbViewController<PreLoginView, WishView> {
-    override func updatePreLoginViewContent() {
+class PreWishViewController: PreLoginViewController<PreLoginView> {
+    override func updateContent() {
         let loginContent = LoginSection.wishView.stubData()
-        preLoginView.configure(with: loginContent)
+        contentView.configure(with: loginContent)
     }
+    
 }

@@ -9,7 +9,7 @@ import UIKit
 import Anchorage
 
 
-class ProfilePreLoginView: ProgrammaticView, AirbnbPreViewProtocol {
+class ProfilePreLoginView: ProgrammaticView, PreViewProtocol {
     
     weak var delegate: PreLoginViewDelegate?
     

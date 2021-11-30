@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ProfileViewController: AirbnbViewController<ProfilePreLoginView, WishView> {
-    override func updatePreLoginViewContent() {
+class PreProfileViewController: PreLoginViewController<ProfilePreLoginView> {
+    override func updateContent() {
         let loginContent = LoginSection.profileView.stubData()
-        preLoginView.configure(with: loginContent)
+        contentView.configure(with: loginContent)
     }
 }
 
