@@ -17,6 +17,19 @@ extension UIColor {
     }
 }
 
+extension UIColor {
+  static var primary: UIColor {
+    // swiftlint:disable:next force_unwrapping
+      return UIColor.black
+  }
+
+  static var incomingMessage: UIColor {
+    // swiftlint:disable:next force_unwrapping
+    return UIColor(named: "incoming-message")!
+  }
+}
+
+
 enum ColorStyle {
     case standard, inverted
 }

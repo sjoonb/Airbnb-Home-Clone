@@ -13,13 +13,10 @@ import Firebase
 
 class WishView: ProgrammaticView {
     
-    weak var delegate: LoginViewControllerDelegate?
-    
     private let signOutButton = UIButton()
     
     @objc func signOutButtonTabbed() {
         try? Auth.auth().signOut()
-        delegate?.updateView()
     }
     
     // MARK: - Configure & Constrain

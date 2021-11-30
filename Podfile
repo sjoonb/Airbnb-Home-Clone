@@ -8,11 +8,16 @@ target 'AirBnb Home Clone' do
   # Pods for AirBnb Home Clone
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'FirebaseFirestore'
+  pod 'Firebase/Storage'
 
   pod 'GoogleSignIn'
 
   pod 'FBSDKLoginKit'
 
   pod 'Anchorage'
+
+  pod 'MessageKit'
+
 
 end

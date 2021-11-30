@@ -7,18 +7,12 @@
 
 import UIKit
 
-class LogoutViewController: UIViewController, LoginViewControllerDelegate {
+class LogoutViewController: UIViewController {
     
     private lazy var contentView: WishView = .init()
     
     override func loadView() {
         view = contentView
-        contentView.delegate = self
-
-    }
-    
-    func updateView() {
-        print(Self.self)
     }
     
     

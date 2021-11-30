@@ -17,8 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           return
         }
         let window = UIWindow(windowScene: windowScene)
+
         AppController.shared.show(in: window)
     }
+    
 
 }
 

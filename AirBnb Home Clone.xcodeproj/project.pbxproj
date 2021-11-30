@@ -13,6 +13,16 @@
 		DE18960027556C870087A78C /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1895FF27556C870087A78C /* AppController.swift */; };
 		DE1896032755FE5D0087A78C /* PreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1896022755FE5D0087A78C /* PreLoginViewController.swift */; };
 		DE189605275603BC0087A78C /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189604275603BC0087A78C /* LogoutViewController.swift */; };
+		DE189607275616BF0087A78C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189606275616BF0087A78C /* Channel.swift */; };
+		DE18960D275617CF0087A78C /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18960C275617CF0087A78C /* DatabaseRepresentation.swift */; };
+		DE18961127561AFE0087A78C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961027561AFE0087A78C /* ChatViewController.swift */; };
+		DE18961327561C6B0087A78C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961227561C6B0087A78C /* Message.swift */; };
+		DE18961527561CFC0087A78C /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961427561CFC0087A78C /* UIScrollView.swift */; };
+		DE18961727561E650087A78C /* ImageMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961627561E650087A78C /* ImageMediaItem.swift */; };
+		DE189619275621650087A78C /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189618275621650087A78C /* AppSettings.swift */; };
+		DE18961B275638D70087A78C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961A275638D70087A78C /* NavigationController.swift */; };
+		DE18961D27566C330087A78C /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961C27566C330087A78C /* UIImageView+Helpers.swift */; };
+		DE18961F27566D800087A78C /* User+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18961E27566D800087A78C /* User+Helpers.swift */; };
 		DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */; };
 		DE425478272A4716008342CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE425477272A4716008342CF /* GoogleService-Info.plist */; };
 		DE4D8F072737C445008FB36C /* LoginContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F062737C445008FB36C /* LoginContent.swift */; };
@@ -63,6 +73,16 @@
 		DE1895FF27556C870087A78C /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		DE1896022755FE5D0087A78C /* PreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginViewController.swift; sourceTree = "<group>"; };
 		DE189604275603BC0087A78C /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		DE189606275616BF0087A78C /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		DE18960C275617CF0087A78C /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
+		DE18961027561AFE0087A78C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DE18961227561C6B0087A78C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DE18961427561CFC0087A78C /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		DE18961627561E650087A78C /* ImageMediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMediaItem.swift; sourceTree = "<group>"; };
+		DE189618275621650087A78C /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		DE18961A275638D70087A78C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		DE18961C27566C330087A78C /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
+		DE18961E27566D800087A78C /* User+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Helpers.swift"; sourceTree = "<group>"; };
 		DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTabBarController.swift; sourceTree = "<group>"; };
 		DE425477272A4716008342CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE4D8F062737C445008FB36C /* LoginContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContent.swift; sourceTree = "<group>"; };
@@ -143,8 +163,28 @@
 				DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */,
 				DE1896022755FE5D0087A78C /* PreLoginViewController.swift */,
 				DE189604275603BC0087A78C /* LogoutViewController.swift */,
+				DE18961027561AFE0087A78C /* ChatViewController.swift */,
+				DE18961A275638D70087A78C /* NavigationController.swift */,
 			);
 			path = "ViewControllers+Helpers";
+			sourceTree = "<group>";
+		};
+		DE189608275617280087A78C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DE18961227561C6B0087A78C /* Message.swift */,
+				DE18961627561E650087A78C /* ImageMediaItem.swift */,
+				DE18960C275617CF0087A78C /* DatabaseRepresentation.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DE189609275617470087A78C /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				DE189606275616BF0087A78C /* Channel.swift */,
+			);
+			path = Channel;
 			sourceTree = "<group>";
 		};
 		DE8E46EF2711D03A005F9643 /* Views */ = {
@@ -186,6 +226,7 @@
 				DEC79D6C2740CC9F0086F8B9 /* AirBnb Home Clone.entitlements */,
 				DEC3A40F26EF0BBD006DC0EC /* AppDelegate.swift */,
 				DE1895FF27556C870087A78C /* AppController.swift */,
+				DE189618275621650087A78C /* AppSettings.swift */,
 				DEC3A41126EF0BBD006DC0EC /* SceneDelegate.swift */,
 				DEEBBC6A273543A40037B73F /* ViewControllers */,
 				DE8E46EF2711D03A005F9643 /* Views */,
@@ -216,11 +257,14 @@
 				DEC3A42C26EF1D33006DC0EC /* UIView+Helpers.swift */,
 				DEC3A42E26EF1D9A006DC0EC /* UIStackView+Helpers.swift */,
 				DEC3A43026EF1DC6006DC0EC /* UIImage+Helpers.swift */,
+				DE18961C27566C330087A78C /* UIImageView+Helpers.swift */,
 				DEC3A43226EF1E6C006DC0EC /* UIFont+Custom.swift */,
 				DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */,
 				DE8E46E827118157005F9643 /* UIColor+Inverted.swift */,
 				DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */,
 				DEC9FCCB27416F8300AAC7B5 /* UIViewController.swift */,
+				DE18961427561CFC0087A78C /* UIScrollView.swift */,
+				DE18961E27566D800087A78C /* User+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +276,8 @@
 				DEF1CA5F27393633001BA698 /* AuthContent.swift */,
 				DE4D8F062737C445008FB36C /* LoginContent.swift */,
 				DEBE74E927391B510053DAF2 /* DataSourceProvider.swift */,
+				DE189609275617470087A78C /* Channel */,
+				DE189608275617280087A78C /* Chat */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,12 +447,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC3A43526EF1E85006DC0EC /* HomeView.swift in Sources */,
+				DE18961727561E650087A78C /* ImageMediaItem.swift in Sources */,
 				DED5912D26F05AEE002D1932 /* ContentCell.swift in Sources */,
+				DE18960D275617CF0087A78C /* DatabaseRepresentation.swift in Sources */,
 				DEC9FCCC27416F8300AAC7B5 /* UIViewController.swift in Sources */,
 				DE4D8F092737C908008FB36C /* TravelViewController.swift in Sources */,
 				DED5912E26F05AEE002D1932 /* SectionHeader.swift in Sources */,
 				DEC3A42D26EF1D33006DC0EC /* UIView+Helpers.swift in Sources */,
 				DEBE74EA27391B510053DAF2 /* DataSourceProvider.swift in Sources */,
+				DE189607275616BF0087A78C /* Channel.swift in Sources */,
 				DE672C592735D562007E119B /* UIViewPreview.swift in Sources */,
 				DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */,
 				DE1896032755FE5D0087A78C /* PreLoginViewController.swift in Sources */,
@@ -415,6 +464,7 @@
 				DE18960027556C870087A78C /* AppController.swift in Sources */,
 				DEC3A43326EF1E6C006DC0EC /* UIFont+Custom.swift in Sources */,
 				DE4D8F0B2737C915008FB36C /* MessageViewController.swift in Sources */,
+				DE18961327561C6B0087A78C /* Message.swift in Sources */,
 				DE4D8F0D2737C923008FB36C /* ProfileViewController.swift in Sources */,
 				DE4D8F2F2737DC72008FB36C /* LoginViewController.swift in Sources */,
 				DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */,
@@ -422,11 +472,13 @@
 				DEC3A41426EF0BBD006DC0EC /* HomeViewController.swift in Sources */,
 				DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */,
 				DE8E46ED2711BEAB005F9643 /* FooterCell.swift in Sources */,
+				DE189619275621650087A78C /* AppSettings.swift in Sources */,
 				DE4D8F072737C445008FB36C /* LoginContent.swift in Sources */,
 				DEC3A41026EF0BBD006DC0EC /* AppDelegate.swift in Sources */,
 				DEC3A43726EF3423006DC0EC /* HeaderView.swift in Sources */,
 				DEC3A43126EF1DC6006DC0EC /* UIImage+Helpers.swift in Sources */,
 				DEC3A42F26EF1D9A006DC0EC /* UIStackView+Helpers.swift in Sources */,
+				DE18961D27566C330087A78C /* UIImageView+Helpers.swift in Sources */,
 				DEF1CA62273936F0001BA698 /* Content.swift in Sources */,
 				DEEBBC69273543990037B73F /* WishViewController.swift in Sources */,
 				DED5912F26F05AEE002D1932 /* LargeSquareCell.swift in Sources */,
@@ -435,12 +487,16 @@
 				DEBE74E62738D96B0053DAF2 /* UIViewControllerPreview.swift in Sources */,
 				DEF1CA6027393633001BA698 /* AuthContent.swift in Sources */,
 				DEC3A43F26EF52CD006DC0EC /* NSCollectioViewLayout+Layouts.swift in Sources */,
+				DE18961B275638D70087A78C /* NavigationController.swift in Sources */,
 				DEC3A42A26EF1C15006DC0EC /* ProgrammaticView.swift in Sources */,
 				DE8E46EB27118E75005F9643 /* BackgroundView.swift in Sources */,
 				DEC3A41226EF0BBD006DC0EC /* SceneDelegate.swift in Sources */,
 				DEABE3C2273FBF01009A9640 /* Preview.swift in Sources */,
 				DE4D8F332737DD3F008FB36C /* PreLoginView.swift in Sources */,
+				DE18961127561AFE0087A78C /* ChatViewController.swift in Sources */,
 				DE4D8F352737DE37008FB36C /* LoginView.swift in Sources */,
+				DE18961F27566D800087A78C /* User+Helpers.swift in Sources */,
+				DE18961527561CFC0087A78C /* UIScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,16 +10,14 @@ import Anchorage
 
 import Firebase
 
+// For Sign in with Google
+import GoogleSignIn
+
 // For Sign in with Apple
 import AuthenticationServices
 import CryptoKit
 
-protocol LoginViewControllerDelegate: AnyObject {
-    func updateView()
-}
-
 class LoginViewController: UIViewController, LoginViewDelegate {
-    weak var delegate: LoginViewControllerDelegate?
     private lazy var loginView: LoginView = .init()
     
     override func viewDidLoad() {
@@ -55,7 +53,7 @@ class LoginViewController: UIViewController, LoginViewDelegate {
             print("email tapped")
             
         case .google:
-            print("google tapped")
+            performGoogleSignInFlow()
             
         case .apple:
             performAppleSignInFlow()
@@ -89,28 +87,17 @@ class LoginViewController: UIViewController, LoginViewDelegate {
 
     }
     
-//
-//    private func configureNavigationBar() {
-//        let largeFont = UIFont.systemFont(ofSize: 12)
-//        let configuration = UIImage.SymbolConfiguration(font: largeFont)
-//
-//        navigationController?.navigationBar.isTranslucent = false
-//        navigationController?.navigationBar.tintColor = .white
-//        navigationController?.navigationBar.backgroundColor = .white
-//
-//        navigationController?.navigationBar.layer.borderWidth = 1
-//        navigationController?.navigationBar.layer.borderColor = UIColor.quaternaryLabel.cgColor
-//
-//
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark", withConfiguration: configuration), style: .done, target: self, action: #selector(closeButtonTapped))
-//        navigationItem.leftBarButtonItem?.tintColor = .black
-//        navigationItem.title = "로그인 또는 회원 가입"
-//
-//    }
-//
-//    @IBAction func closeButtonTapped() {
-//        dismiss(animated: true, completion: nil)
-//    }
+    // For Sign in with Google
+    
+    private func performGoogleSignInFlow() {
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+
     
 }
 
@@ -155,7 +142,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate,
             // At this point, our user is signed in
             // so we advance to the User View Controller
             self.dismissSheet()
-//            self.delegate?.updateView()
             
         }
     }
@@ -221,6 +207,25 @@ extension LoginViewController: ASAuthorizationControllerDelegate,
 }
 
 
+// MARK: - GIDSignInDelegate for Google Sign In
+
+extension LoginViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard error == nil else { return displayError(error) }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { result, error in
+             guard error == nil else { return self.displayError(error) }
+            
+            // At this point, our user is signed in
+            // so we advance to the User View Controller
+            self.dismissSheet()
+        }
+    }
+}
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 

@@ -18,13 +18,13 @@ final class AppController {
     }
     
     init() {
-      NotificationCenter.default.addObserver(
-        self,
-        selector: #selector(handleAppState),
-        name: .AuthStateDidChange,
-        object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppState),
+            name: .AuthStateDidChange,
+            object: nil)
     }
-
+    
     
     private var tabBarController: UITabBarController = AirbnbTabBarController()
     
@@ -41,7 +41,6 @@ final class AppController {
         window.backgroundColor = .white
         
         handleAppState()
-        configureTabBar()
         rootViewController = tabBarController
         
         window.makeKeyAndVisible()
@@ -49,28 +48,37 @@ final class AppController {
     
     private func configureTabBar() {
         
-        let tabBarItems = [UITabBarItem(title: "검색", image: UIImage(named: "ico-home"), tag: 0),
-                           UITabBarItem(title: "위시리스트", image: UIImage(named: "ico-home"), tag: 1),
+        let tabBarItems = [UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 0),
+                           UITabBarItem(title: "위시리스트", image: UIImage(systemName: "heart"), tag: 1),
                            UITabBarItem(title: "여행", image: UIImage(named: "logo"), tag: 2),
-                           UITabBarItem(title: "메시지", image: UIImage(named: "ico-home"), tag: 3),
-                           UITabBarItem(title: "프로필", image: UIImage(named: "ico-home"), tag: 4)]
+                           UITabBarItem(title: "메시지", image: UIImage(systemName: "message"), tag: 3),
+                           UITabBarItem(title: "프로필", image: UIImage(systemName: "person.circle"), tag: 4)]
+        
         
         tabBarController.viewControllers?.enumerated().forEach { (index, viewController) in
             viewController.tabBarItem = tabBarItems[index]
         }
         
         tabBarController.tabBar.backgroundColor = .white
+        tabBarController.tabBar.tintColor = .systemPink
         
     }
+
     
     @objc private func handleAppState() {
-        if let _ = Auth.auth().currentUser {
-//            tabBarController.setViewControllers([HomeViewController(), ProfileViewController()], animated: false)
-            tabBarController.setViewControllers([HomeViewController(), LogoutViewController(), LogoutViewController(), LogoutViewController(), LogoutViewController()], animated: false)
+        if let user = Auth.auth().currentUser {
+            
+            AppSettings.displayName = user.email ?? ""
+            
+            let navMessageViewController = NavigationController(MessageViewController(currentUser: user))
+            
+            tabBarController.setViewControllers([HomeViewController(), LogoutViewController(), LogoutViewController(), navMessageViewController, LogoutViewController()], animated: false)
             
         } else {
             tabBarController.setViewControllers([HomeViewController(), PreWishViewController(), PreTravelViewController(), PreMessageViewController(), PreProfileViewController()], animated: false)
         }
-
+        
+        configureTabBar()
+        
     }
 }
