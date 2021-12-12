@@ -3,7 +3,47 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "refObservers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WishView.signOutButtonTabbed():WishView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WishViewController.loadView():WishViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TravelViewController.viewWillAppear(_:):TravelViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "refObservers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppController.handleAppState():AppController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppSettings.displayName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WishViewController.viewWillAppear(_:):WishViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "user">
@@ -19,26 +59,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppController.handleAppState():AppController.swift">
+         contextName = "TravelViewController.viewDidDisappear(_:):TravelViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "AppSettings.displayName">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WishView.signOutButtonTabbed():WishView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WishViewController.viewWillAppear(_:):WishViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "user">
+               value = "refObservers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

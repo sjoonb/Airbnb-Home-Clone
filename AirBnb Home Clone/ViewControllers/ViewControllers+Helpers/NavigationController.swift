@@ -30,14 +30,23 @@ final class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.tintColor = .primary
-        navigationBar.backgroundColor = .white
-        
         navigationBar.prefersLargeTitles = true
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .medium)]
-        navigationBar.largeTitleTextAttributes = navigationBar.titleTextAttributes
-        navigationBar.topItem?.prompt = ""
-        
+
+        let appearance = UINavigationBarAppearance()
+
+        // Set font
+        appearance.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .medium)
+        ]
+        appearance.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)
+        ]
+
+        // Apply the appearance
+
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        self.navigationController?.navigationBar.compactAppearance = appearance
+        self.navigationController?.navigationBar.standardAppearance = appearance
         
         toolbar.tintColor = .primary
     }

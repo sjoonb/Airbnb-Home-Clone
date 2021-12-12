@@ -40,7 +40,7 @@ class LoginViewController: UIViewController, LoginViewDelegate {
     }
     
     
-    func didSelectItem(_ item: AuthProvider.AuthSection.Item) {
+    func didSelectItem(_ item: AuthProvider.Section.Item) {
         
         let providerName = item.title!
         

@@ -10,7 +10,7 @@ import Anchorage
 
 protocol LoginViewDelegate: AnyObject {
     func dismissSheet()
-    func didSelectItem(_ item: AuthProvider.AuthSection.Item)
+    func didSelectItem(_ item: AuthProvider.Section.Item)
 }
 
 class LoginView: ProgrammaticView, DataSourceProviderDelegate {

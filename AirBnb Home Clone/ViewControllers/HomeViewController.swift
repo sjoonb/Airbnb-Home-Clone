@@ -22,10 +22,10 @@ class HomeViewController: UIViewController {
     }
     
     private func updateList() {
-        var snapShot = NSDiffableDataSourceSnapshot<Section, Content>()
+        var snapShot = NSDiffableDataSourceSnapshot<HomeSection, Content>()
         
-        snapShot.appendSections(Section.allCases)
-        Section.allCases.forEach( {
+        snapShot.appendSections(HomeSection.allCases)
+        HomeSection.allCases.forEach( {
             snapShot.appendItems($0.stubData(), toSection: $0)
         })
         

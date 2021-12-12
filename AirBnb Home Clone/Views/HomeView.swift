@@ -41,7 +41,7 @@ class HomeView: ProgrammaticView {
         collectionView.bottomAnchor == bottomAnchor
     }
     
-    func apply(_ snapshot: NSDiffableDataSourceSnapshot<Section, Content>) {
+    func apply(_ snapshot: NSDiffableDataSourceSnapshot<HomeSection, Content>) {
         dataSource.apply(snapshot)
     }
 }
@@ -49,7 +49,7 @@ class HomeView: ProgrammaticView {
 extension HomeView {
     func makeCollectionView() -> UICollectionView {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            let section = Section.allCases[sectionIndex]
+            let section = HomeSection.allCases[sectionIndex]
             switch section {
             // 이후에 다른 layout 적용을 위해 switch 문을 사용하는듯.
             case .nearby:
@@ -70,7 +70,7 @@ extension HomeView {
 
 
     
-    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, Content> {
+    func makeDataSource() -> UICollectionViewDiffableDataSource<HomeSection, Content> {
         let smallSuqareCellRegistration = UICollectionView.CellRegistration<SmallSquareCell, Content> { cell, indexPath, content in
             cell.configure(with: content)
         }
@@ -89,9 +89,9 @@ extension HomeView {
             cell.configure(with: content)
         }
     
-        let dataSource = UICollectionViewDiffableDataSource<Section, Content>(
+        let dataSource = UICollectionViewDiffableDataSource<HomeSection, Content>(
             collectionView: collectionView) { view, indexPath, item in
-            let section = Section.allCases[indexPath.section]
+            let section = HomeSection.allCases[indexPath.section]
             switch section {
             case .nearby:
                 let registration = smallSuqareCellRegistration
@@ -114,11 +114,11 @@ extension HomeView {
             }
         }
         
-        let headers = Section.allCases.map(\.headerContent)
+        let headers = HomeSection.allCases.map(\.headerContent)
         let headerRegistration = SectionHeader.registration(headers: headers)
         let invertedRegistration = InvertedHeader.registration(headers: headers)
         dataSource.supplementaryViewProvider = { collectionView, string, indexPath in
-            let section = Section.allCases[indexPath.section]
+            let section = HomeSection.allCases[indexPath.section]
             switch section {
             case .experiences:
                 return collectionView.dequeueConfiguredReusableSupplementary(using: invertedRegistration, for: indexPath)

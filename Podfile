@@ -6,10 +6,13 @@ target 'AirBnb Home Clone' do
   use_frameworks!
 
   # Pods for AirBnb Home Clone
+  pod 'Firebase'
+  pod 'Firebase/Database'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'FirebaseFirestore'
   pod 'Firebase/Storage'
+  pod 'FirebaseMessaging'
 
   pod 'GoogleSignIn'
 

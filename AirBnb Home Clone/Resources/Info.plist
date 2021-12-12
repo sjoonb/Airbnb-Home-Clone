@@ -31,6 +31,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to send photos from the Camera.</string>
 	<key>UIApplicationSceneManifest</key>
