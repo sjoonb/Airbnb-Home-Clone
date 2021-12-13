@@ -16,6 +16,8 @@ class PreTravelViewController: PreLoginViewController<PreLoginView> {
   }
 }
 
+
+
 class TravelViewController: UITableViewController {
   // MARK: Constants
   
@@ -30,10 +32,12 @@ class TravelViewController: UITableViewController {
   
   // MARK: Properties
   var items: [LodgingItem] = []
+  var filteredItems: [LodgingItem] = []
   var user: User?
   var onlineUserCount = UIBarButtonItem()
   var handle: AuthStateDidChangeListenerHandle?
   
+  let searchBar = UISearchBar()
 //  override var preferredStatusBarStyle: UIStatusBarStyle {
 //    return .lightContent
 //  }
@@ -41,6 +45,11 @@ class TravelViewController: UITableViewController {
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // SearchBar configuration
+    
+    navigationItem.titleView = searchBar
+    searchBar.delegate = self
     
     tableView.allowsMultipleSelectionDuringEditing = false
     
@@ -60,7 +69,7 @@ class TravelViewController: UITableViewController {
     navigationController?.isToolbarHidden = false
     
     let completed = ref
-      .queryOrdered(byChild: "completed")
+//      .queryOrdered(byChild: "completed")
       .observe(.value) { snapshot in
         var newItems: [LodgingItem] = []
         for child in snapshot.children {
@@ -71,6 +80,7 @@ class TravelViewController: UITableViewController {
           }
         }
         self.items = newItems
+        self.filteredItems = newItems
         self.tableView.reloadData()
       }
     refObservers.append(completed)
@@ -100,13 +110,13 @@ class TravelViewController: UITableViewController {
   
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
+    return filteredItems.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier) ?? UITableViewCell(style: .subtitle, reuseIdentifier: itemCellIdentifier)
     
-    let lodgingItem = items[indexPath.row]
+    let lodgingItem = filteredItems[indexPath.row]
     
     cell.textLabel?.text = lodgingItem.name
     cell.detailTextLabel?.text = lodgingItem.addedByUser
@@ -122,20 +132,20 @@ class TravelViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      let lodgingItem = items[indexPath.row]
+      let lodgingItem = filteredItems[indexPath.row]
       lodgingItem.ref?.removeValue()
     }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let cell = tableView.cellForRow(at: indexPath) else { return }
-    let lodgingItem = items[indexPath.row]
-    let toggledCompletion = !lodgingItem.completed
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-//    let navController = UINavigationController(rootViewController: LoginViewController())
-//    navigationController?.present(navController, animated: true, completion: nil)
+//    guard let cell = tableView.cellForRow(at: indexPath) else { return }
+    let lodgingItem = filteredItems[indexPath.row]
+//    let toggledCompletion = !lodgingItem.completed
+//    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+    let navController = UINavigationController(rootViewController: LodgingViewController(lodgingItem: lodgingItem))
+    navigationController?.present(navController, animated: true, completion: nil)
 
-    lodgingItem.ref?.updateChildValues(["completed": toggledCompletion])
+//    lodgingItem.ref?.updateChildValues(["completed": toggledCompletion])
   }
   
   func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
@@ -185,3 +195,21 @@ class TravelViewController: UITableViewController {
   }
 }
 
+extension TravelViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    filteredItems = []
+    
+    if searchText == "" {
+      filteredItems = items
+    }
+    else {
+      items.forEach { item in
+        if item.name.lowercased().contains(searchText.lowercased()) {
+          filteredItems.append(item)
+        }
+      }
+    }
+    self.tableView.reloadData()
+  }
+  
+}

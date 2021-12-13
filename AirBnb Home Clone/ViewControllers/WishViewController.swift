@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class PreWishViewController: PreLoginViewController<PreLoginView> {
   override func updateContent() {

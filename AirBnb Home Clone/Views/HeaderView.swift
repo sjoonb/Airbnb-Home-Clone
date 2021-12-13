@@ -131,7 +131,7 @@ class HeaderView: ProgrammaticView {
 }
 
 extension HeaderView {
-  
+
   private var currentOffset: CGFloat {
     get { heightConstraint.constant }
     set { animate(to: newValue) }

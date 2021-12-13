@@ -137,7 +137,7 @@ extension HomeView: UICollectionViewDelegate {
         let yOffset = scrollView.contentOffset.y
         let updatedY = headerView.updateHeader(newY: yOffset, oldY: oldYOffset)
         scrollView.contentOffset.y = updatedY
-        
+
         oldYOffset = scrollView.contentOffset.y
     }
 }

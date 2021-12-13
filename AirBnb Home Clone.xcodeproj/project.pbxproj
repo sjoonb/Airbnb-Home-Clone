@@ -26,6 +26,7 @@
 		DE189622275670030087A78C /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189621275670030087A78C /* UserAction.swift */; };
 		DE189624275672300087A78C /* UINavigationBar+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189623275672300087A78C /* UINavigationBar+Helper.swift */; };
 		DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */; };
+		DE3D26782767594F00A9F53F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D26772767594F00A9F53F /* MapViewController.swift */; };
 		DE425478272A4716008342CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE425477272A4716008342CF /* GoogleService-Info.plist */; };
 		DE4D8F072737C445008FB36C /* LoginContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F062737C445008FB36C /* LoginContent.swift */; };
 		DE4D8F092737C908008FB36C /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F082737C908008FB36C /* TravelViewController.swift */; };
@@ -34,6 +35,7 @@
 		DE4D8F2F2737DC72008FB36C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F2E2737DC72008FB36C /* LoginViewController.swift */; };
 		DE4D8F332737DD3F008FB36C /* PreLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F322737DD3F008FB36C /* PreLoginView.swift */; };
 		DE4D8F352737DE37008FB36C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F342737DE37008FB36C /* LoginView.swift */; };
+		DE5A6F0627660B8A00C1FF6C /* LodgingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6F0527660B8A00C1FF6C /* LodgingViewController.swift */; };
 		DE672C592735D562007E119B /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE672C582735D562007E119B /* UIViewPreview.swift */; };
 		DE8E46E727118064005F9643 /* UITraitCollection+Inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */; };
 		DE8E46E927118157005F9643 /* UIColor+Inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46E827118157005F9643 /* UIColor+Inverted.swift */; };
@@ -89,6 +91,7 @@
 		DE189621275670030087A78C /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		DE189623275672300087A78C /* UINavigationBar+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Helper.swift"; sourceTree = "<group>"; };
 		DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTabBarController.swift; sourceTree = "<group>"; };
+		DE3D26772767594F00A9F53F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DE425477272A4716008342CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE4D8F062737C445008FB36C /* LoginContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContent.swift; sourceTree = "<group>"; };
 		DE4D8F082737C908008FB36C /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		DE4D8F2E2737DC72008FB36C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE4D8F322737DD3F008FB36C /* PreLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreLoginView.swift; sourceTree = "<group>"; };
 		DE4D8F342737DE37008FB36C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DE5A6F0527660B8A00C1FF6C /* LodgingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgingViewController.swift; sourceTree = "<group>"; };
 		DE672C582735D562007E119B /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		DE8E46E627118064005F9643 /* UITraitCollection+Inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Inverted.swift"; sourceTree = "<group>"; };
 		DE8E46E827118157005F9643 /* UIColor+Inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Inverted.swift"; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				DE1896022755FE5D0087A78C /* PreLoginViewController.swift */,
 				DE189604275603BC0087A78C /* LogoutViewController.swift */,
 				DE18961027561AFE0087A78C /* ChatViewController.swift */,
+				DE5A6F0527660B8A00C1FF6C /* LodgingViewController.swift */,
 			);
 			path = "ViewControllers+Helpers";
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
 				DEEBBC68273543990037B73F /* WishViewController.swift */,
 				DE4D8F082737C908008FB36C /* TravelViewController.swift */,
+				DE3D26772767594F00A9F53F /* MapViewController.swift */,
 				DE4D8F0A2737C915008FB36C /* MessageViewController.swift */,
 				DE4D8F0C2737C923008FB36C /* ProfileViewController.swift */,
 				DE1896012755701E0087A78C /* ViewControllers+Helpers */,
@@ -474,6 +480,7 @@
 				DEC3A43526EF1E85006DC0EC /* HomeView.swift in Sources */,
 				DE189624275672300087A78C /* UINavigationBar+Helper.swift in Sources */,
 				DE18961727561E650087A78C /* ImageMediaItem.swift in Sources */,
+				DE5A6F0627660B8A00C1FF6C /* LodgingViewController.swift in Sources */,
 				DED5912D26F05AEE002D1932 /* ContentCell.swift in Sources */,
 				DE18960D275617CF0087A78C /* DatabaseRepresentation.swift in Sources */,
 				DEC9FCCC27416F8300AAC7B5 /* UIViewController.swift in Sources */,
@@ -525,6 +532,7 @@
 				DE4D8F352737DE37008FB36C /* LoginView.swift in Sources */,
 				DE18961F27566D800087A78C /* User+Helpers.swift in Sources */,
 				DE18961527561CFC0087A78C /* UIScrollView.swift in Sources */,
+				DE3D26782767594F00A9F53F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
