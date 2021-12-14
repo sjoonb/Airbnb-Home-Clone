@@ -11,11 +11,11 @@ import SwiftUI
 struct Preview: PreviewProvider {
     static var previews: some View {
         Group {
-//            HomeViewController().showPreview()
-            UIViewPreview {
-                let view = ProfilePreLoginView()
-                return view
-            }.previewDevice("iPhone 11").previewLayout(.sizeThatFits)
+//            MasterViewController().showPreview()
+//            UIViewPreview {
+//                let view = ProfilePreLoginView()
+//                return view
+//            }.previewDevice("iPhone 11").previewLayout(.sizeThatFits)
 
 //            UIViewPreview {
 //                let view = TopLoginView()

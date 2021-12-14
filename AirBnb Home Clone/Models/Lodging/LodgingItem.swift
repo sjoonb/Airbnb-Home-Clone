@@ -37,14 +37,17 @@ struct LodgingItem {
   let ref: DatabaseReference?
   let key: String
   let name: String
+  let description: String
   let addedByUser: String
   var completed: Bool
+//  var isFavorite: Bool
 
   // MARK: Initialize with Raw Data
-  init(name: String, addedByUser: String, completed: Bool, key: String = "") {
+  init(name: String, description: String, addedByUser: String, completed: Bool, key: String = "") {
     self.ref = nil
     self.key = key
     self.name = name
+    self.description = description
     self.addedByUser = addedByUser
     self.completed = completed
   }
@@ -54,6 +57,7 @@ struct LodgingItem {
     guard
       let value = snapshot.value as? [String: AnyObject],
       let name = value["name"] as? String,
+      let description = value["description"] as? String,
       let addedByUser = value["addedByUser"] as? String,
       let completed = value["completed"] as? Bool
     else {
@@ -63,6 +67,7 @@ struct LodgingItem {
     self.ref = snapshot.ref
     self.key = snapshot.key
     self.name = name
+    self.description = description
     self.addedByUser = addedByUser
     self.completed = completed
   }
@@ -71,6 +76,7 @@ struct LodgingItem {
   func toAnyObject() -> Any {
     return [
       "name": name,
+      "description": description,
       "addedByUser": addedByUser,
       "completed": completed
     ]

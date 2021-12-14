@@ -10,6 +10,7 @@ import UIKit
 
 protocol HeaderViewDelegate: AnyObject   {
   func updateStatusBarStyle(to style: UIStatusBarStyle)
+  func openSheet()
 }
 
 
@@ -60,6 +61,7 @@ class HeaderView: ProgrammaticView {
     searchBar.titleLabel?.font = .custom(style: .button)
     searchBar.imageView?.contentMode = .scaleAspectFit
     searchBar.imageEdgeInsets = .init(top: 14, left: 0, bottom: 14, right: 4)
+    searchBar.addTarget(self, action: #selector(searchBarTapped), for: .touchUpInside)
 
     titleLabel.text = "에어비앤비가\n여행지를 찾아드릴게요!"
     titleLabel.textColor = .black
@@ -195,4 +197,10 @@ extension HeaderView {
   }
   
   
+}
+
+extension HeaderView {
+  @objc func searchBarTapped() {
+    delegate?.openSheet()
+  }
 }

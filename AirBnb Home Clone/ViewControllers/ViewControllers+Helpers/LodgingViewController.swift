@@ -8,13 +8,71 @@
 import UIKit
 import FirebaseDatabase
 
-class MasterViewController: UIViewController {
-  override func viewDidLoad() {
-      
+class LodgingViewController: UIViewController, LodgingViewDelegate {
+  
+  private lazy var contentView: LodgingView = .init()
+  
+  private var lodgingItem: LodgingItem!
+  var ref: DatabaseReference!
+  var refObservers: [DatabaseHandle] = []
+  
+  init(lodgingItem: LodgingItem) {
+    super.init(nibName: nil, bundle: nil)
+    self.ref = lodgingItem.ref
+    self.lodgingItem = lodgingItem
   }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  // MARK: - Life Cycles
+  
+  override func loadView() {
+    view = contentView
+    contentView.delegate = self
+    
+  }
+  
+  override func viewDidLoad() {
+    contentView.configure(with: self.lodgingItem)
+    contentView.delegate = self
+
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    let completed = ref.observe(.value) { snapshot in
+      let lodgingItem = LodgingItem(snapshot: snapshot)
+      self.lodgingItem = lodgingItem
+    }
+    refObservers.append(completed)
+    
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(true)
+    
+    refObservers.forEach(ref.removeObserver(withHandle:))
+    refObservers = []
+    
+  }
+  
+  // MARK: - LodgingViewDelegate
+  
+  func toggleFavorite() {
+    let toggledCompletion = !lodgingItem.completed
+    
+    lodgingItem.ref?.updateChildValues(["completed": toggledCompletion])
+
+  }
+  
+
 }
 
-class LodgingViewController: UITableViewController {
+
+class TempViewController: UITableViewController {
   private let itemCellIdentifier = "ItemCell"
   
   private var lodgingItem: LodgingItem!
@@ -23,9 +81,7 @@ class LodgingViewController: UITableViewController {
   
   init(lodgingItem: LodgingItem) {
     super.init(style: .plain)
-    ref = lodgingItem.ref
-//    self.lodgingItem = lodgingItem
-    
+    self.ref = lodgingItem.ref
   }
   
   required init?(coder: NSCoder) {
@@ -34,7 +90,7 @@ class LodgingViewController: UITableViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
+    
     let completed = ref.observe(.value) { snapshot in
       let lodgingItem = LodgingItem(snapshot: snapshot)
       self.lodgingItem = lodgingItem
@@ -44,10 +100,10 @@ class LodgingViewController: UITableViewController {
   
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(true)
-
+    
     refObservers.forEach(ref.removeObserver(withHandle:))
     refObservers = []
-
+    
   }
   
   // MARK: - UITableView Delegate methods
@@ -76,6 +132,4 @@ class LodgingViewController: UITableViewController {
     
   }
   
-  private func toggleWishList() {}
-
-}
+} 

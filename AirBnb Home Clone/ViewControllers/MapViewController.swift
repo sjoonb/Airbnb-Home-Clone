@@ -28,7 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     self.mapView.setRegion(region, animated: false)
     self.mapView.addAnnotation(pin)
     
-    mapView.delegate = self
+//    mapView.delegate = self
     
   }
 }

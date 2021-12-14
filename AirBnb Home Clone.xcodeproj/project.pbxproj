@@ -27,6 +27,7 @@
 		DE189624275672300087A78C /* UINavigationBar+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE189623275672300087A78C /* UINavigationBar+Helper.swift */; };
 		DE1EA67927298DC3004DEF51 /* AirbnbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */; };
 		DE3D26782767594F00A9F53F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D26772767594F00A9F53F /* MapViewController.swift */; };
+		DE3D267A2767B94700A9F53F /* LodgingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D26792767B94700A9F53F /* LodgingView.swift */; };
 		DE425478272A4716008342CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE425477272A4716008342CF /* GoogleService-Info.plist */; };
 		DE4D8F072737C445008FB36C /* LoginContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F062737C445008FB36C /* LoginContent.swift */; };
 		DE4D8F092737C908008FB36C /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D8F082737C908008FB36C /* TravelViewController.swift */; };
@@ -42,7 +43,9 @@
 		DE8E46EB27118E75005F9643 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46EA27118E75005F9643 /* BackgroundView.swift */; };
 		DE8E46ED2711BEAB005F9643 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46EC2711BEAB005F9643 /* FooterCell.swift */; };
 		DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */; };
+		DE91FD7C2767DCA6006EE8AD /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FD7B2767DCA6006EE8AD /* UIViewController+Helpers.swift */; };
 		DEABE3C2273FBF01009A9640 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABE3C1273FBF01009A9640 /* Preview.swift */; };
+		DEB7311727687D4E005B57F6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7311627687D4E005B57F6 /* SearchViewController.swift */; };
 		DEBE74E62738D96B0053DAF2 /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE74E52738D96B0053DAF2 /* UIViewControllerPreview.swift */; };
 		DEBE74EA27391B510053DAF2 /* DataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE74E927391B510053DAF2 /* DataSourceProvider.swift */; };
 		DEBEAF93275A5F9B00476A66 /* LodgingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEAF92275A5F9B00476A66 /* LodgingItem.swift */; };
@@ -92,6 +95,7 @@
 		DE189623275672300087A78C /* UINavigationBar+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Helper.swift"; sourceTree = "<group>"; };
 		DE1EA67827298DC2004DEF51 /* AirbnbTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTabBarController.swift; sourceTree = "<group>"; };
 		DE3D26772767594F00A9F53F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DE3D26792767B94700A9F53F /* LodgingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgingView.swift; sourceTree = "<group>"; };
 		DE425477272A4716008342CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE4D8F062737C445008FB36C /* LoginContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContent.swift; sourceTree = "<group>"; };
 		DE4D8F082737C908008FB36C /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +111,9 @@
 		DE8E46EA27118E75005F9643 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DE8E46EC2711BEAB005F9643 /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		DE8E46F02711D37E005F9643 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
+		DE91FD7B2767DCA6006EE8AD /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		DEABE3C1273FBF01009A9640 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		DEB7311627687D4E005B57F6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DEBE74E52738D96B0053DAF2 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		DEBE74E927391B510053DAF2 /* DataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProvider.swift; sourceTree = "<group>"; };
 		DEBEAF92275A5F9B00476A66 /* LodgingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LodgingItem.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 				DE189604275603BC0087A78C /* LogoutViewController.swift */,
 				DE18961027561AFE0087A78C /* ChatViewController.swift */,
 				DE5A6F0527660B8A00C1FF6C /* LodgingViewController.swift */,
+				DEB7311627687D4E005B57F6 /* SearchViewController.swift */,
 			);
 			path = "ViewControllers+Helpers";
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 			children = (
 				DEC3A43426EF1E85006DC0EC /* HomeView.swift */,
 				DEC3A43626EF3423006DC0EC /* HeaderView.swift */,
+				DE3D26792767B94700A9F53F /* LodgingView.swift */,
 				DEC3A43B26EF4001006DC0EC /* Collection View Elements */,
 				DE4D8F322737DD3F008FB36C /* PreLoginView.swift */,
 				DE0FF9C92742F33800E101A5 /* ProfilePreLoginView.swift */,
@@ -283,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC3A42C26EF1D33006DC0EC /* UIView+Helpers.swift */,
+				DE91FD7B2767DCA6006EE8AD /* UIViewController+Helpers.swift */,
 				DEC3A42E26EF1D9A006DC0EC /* UIStackView+Helpers.swift */,
 				DEC3A43026EF1DC6006DC0EC /* UIImage+Helpers.swift */,
 				DE18961C27566C330087A78C /* UIImageView+Helpers.swift */,
@@ -491,6 +500,7 @@
 				DE189607275616BF0087A78C /* Channel.swift in Sources */,
 				DE672C592735D562007E119B /* UIViewPreview.swift in Sources */,
 				DE8E46F12711D37E005F9643 /* UITextView+Helpers.swift in Sources */,
+				DEB7311727687D4E005B57F6 /* SearchViewController.swift in Sources */,
 				DE1896032755FE5D0087A78C /* PreLoginViewController.swift in Sources */,
 				DEC3A43D26EF401D006DC0EC /* SmallSquareCell.swift in Sources */,
 				DE8E46E727118064005F9643 /* UITraitCollection+Inverted.swift in Sources */,
@@ -517,6 +527,7 @@
 				DEEBBC69273543990037B73F /* WishViewController.swift in Sources */,
 				DED5912F26F05AEE002D1932 /* LargeSquareCell.swift in Sources */,
 				DE189605275603BC0087A78C /* LogoutViewController.swift in Sources */,
+				DE91FD7C2767DCA6006EE8AD /* UIViewController+Helpers.swift in Sources */,
 				DE0FF9C82742E65F00E101A5 /* WishView.swift in Sources */,
 				DEBE74E62738D96B0053DAF2 /* UIViewControllerPreview.swift in Sources */,
 				DEF1CA6027393633001BA698 /* TableContent.swift in Sources */,
@@ -530,6 +541,7 @@
 				DE4D8F332737DD3F008FB36C /* PreLoginView.swift in Sources */,
 				DE18961127561AFE0087A78C /* ChatViewController.swift in Sources */,
 				DE4D8F352737DE37008FB36C /* LoginView.swift in Sources */,
+				DE3D267A2767B94700A9F53F /* LodgingView.swift in Sources */,
 				DE18961F27566D800087A78C /* User+Helpers.swift in Sources */,
 				DE18961527561CFC0087A78C /* UIScrollView.swift in Sources */,
 				DE3D26782767594F00A9F53F /* MapViewController.swift in Sources */,

@@ -3,30 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GLOBAL">
-         <PersistentStrings>
-            <PersistentString
-               value = "refObservers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WishView.signOutButtonTabbed():WishView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WishViewController.loadView():WishViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "user">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "TravelViewController.viewWillAppear(_:):TravelViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -35,18 +11,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppController.handleAppState():AppController.swift">
+         contextName = "GLOBAL">
          <PersistentStrings>
             <PersistentString
-               value = "AppSettings.displayName">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "WishViewController.viewWillAppear(_:):WishViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "user">
+               value = "refObservers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -63,6 +31,50 @@
          <PersistentStrings>
             <PersistentString
                value = "refObservers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LodgingViewController.loadView():LodgingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LodgingView.configure():LodgingView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppController.handleAppState():AppController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppSettings.displayName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WishViewController.loadView():WishViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WishViewController.viewWillAppear(_:):WishViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LodgingViewController.init(lodgingItem:):LodgingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LodgingViewController.viewWillAppear(_:):LodgingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WishView.signOutButtonTabbed():WishView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
