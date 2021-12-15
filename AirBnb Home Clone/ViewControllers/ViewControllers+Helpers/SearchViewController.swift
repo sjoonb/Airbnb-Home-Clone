@@ -206,7 +206,10 @@ class SearchViewController: UITableViewController {
         description: description,
         addedByUser: user.email ?? "",
         isVisited: false,
-        mapItem: MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude))
+        streetKey: streetKey,
+        latitude: latitude,
+        longitude: longitude)
+//        mapItem: MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude))
       
       let lodgingItemRef = self.ref.child(text.lowercased())
       lodgingItemRef.setValue(lodgingItem.toAnyObject())

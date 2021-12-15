@@ -148,18 +148,18 @@ class LodgingView: ProgrammaticView {
       toggleFavoriteButton()
     }
     
-    configureMapView(with: content?.mapItem)
+    configureMapView(with: content)
 
   }
   
   // MARK: - Private Helpers
   
-  private func configureMapView(with mapItem: MapItem?) {
+  private func configureMapView(with content: LodgingItem?) {
     
-    guard let mapItem = mapItem else { return }
+    guard let content = content else { return }
     
-    let location = CLLocationCoordinate2D(latitude: mapItem.latitude, longitude: mapItem.longitude)
-    let address = [CNPostalAddressStreetKey: mapItem.streetKey, CNPostalAddressCountryKey: "/ Republic Of Korea"]
+    let location = CLLocationCoordinate2D(latitude: content.latitude, longitude: content.longitude)
+    let address = [CNPostalAddressStreetKey: content.streetKey, CNPostalAddressCountryKey: "/ Republic Of Korea"]
     
     let pin = MKPlacemark(coordinate: location, addressDictionary: address)
     

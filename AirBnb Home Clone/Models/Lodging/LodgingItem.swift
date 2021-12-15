@@ -77,11 +77,15 @@ struct LodgingItem {
   let addedByUser: String
   var isVisited: Bool
   var isFavorite: Bool
-  let mapItem: MapItem
+  let streetKey: String
+  let latitude: Double
+  let longitude: Double
+  
+//  let mapItem: MapItem
 //  var isFavorite: Bool
 
   // MARK: Initialize with Raw Data
-  init(name: String, description: String, addedByUser: String, isVisited: Bool, isFavorite: Bool = false, key: String = "", mapItem: MapItem) {
+  init(name: String, description: String, addedByUser: String, isVisited: Bool, isFavorite: Bool = false, key: String = "", streetKey: String, latitude: Double, longitude: Double) {
     self.ref = nil
     self.key = key
     self.name = name
@@ -89,7 +93,10 @@ struct LodgingItem {
     self.addedByUser = addedByUser
     self.isVisited = isVisited
     self.isFavorite = isFavorite
-    self.mapItem = mapItem
+//    self.mapItem = mapItem
+    self.streetKey = streetKey
+    self.latitude = latitude
+    self.longitude = longitude
   }
 
   // MARK: Initialize with Firebase DataSnapshot
@@ -104,10 +111,13 @@ struct LodgingItem {
       let addedByUser = value["addedByUser"] as? String,
       let isVisited = value["isVisited"] as? Bool,
       let isFavorite = value["isFavorite"] as? Bool,
-      let mapItemValue = value["mapItem"] as? [String: AnyObject],
-      let streetKey = mapItemValue["streetKey"] as? String,
-      let latitude = mapItemValue["latitude"] as? Double,
-      let longitude = mapItemValue["longitude"] as? Double
+      let streetKey = value["streetKey"] as? String,
+      let latitude = value["latitude"] as? Double,
+      let longitude = value["longitude"] as? Double
+//      let mapItemValue = value["mapItem"] as? [String: AnyObject],
+//      let streetKey = mapItemValue["streetKey"] as? String,
+//      let latitude = mapItemValue["latitude"] as? Double,
+//      let longitude = mapItemValue["longitude"] as? Double
     else {
       return nil
     }
@@ -119,7 +129,10 @@ struct LodgingItem {
     self.addedByUser = addedByUser
     self.isVisited = isVisited
     self.isFavorite = isFavorite
-    self.mapItem = MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude)
+    self.streetKey = streetKey
+    self.latitude = latitude
+    self.longitude = longitude
+//    self.mapItem = MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude)
   }
 
   // MARK: Convert LodgingItem to AnyObject
@@ -130,7 +143,10 @@ struct LodgingItem {
       "addedByUser": addedByUser,
       "isVisited": isVisited,
       "isFavorite": isFavorite,
-      "mapItem": mapItem.toAnyObject()
+//      "mapItem": mapItem.toAnyObject()
+      "streetKey": streetKey,
+      "latitude": latitude,
+      "longitude": longitude,
     ]
   }
 }
