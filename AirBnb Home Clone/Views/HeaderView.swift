@@ -61,7 +61,7 @@ class HeaderView: ProgrammaticView {
     searchBar.titleLabel?.font = .custom(style: .button)
     searchBar.imageView?.contentMode = .scaleAspectFit
     searchBar.imageEdgeInsets = .init(top: 14, left: 0, bottom: 14, right: 4)
-    searchBar.addTarget(self, action: #selector(searchBarTapped), for: .touchUpInside)
+    searchBar.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 
     titleLabel.text = "에어비앤비가\n여행지를 찾아드릴게요!"
     titleLabel.textColor = .black
@@ -84,6 +84,8 @@ class HeaderView: ProgrammaticView {
     button.setTitleColor(.purple, for: .normal)
     button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
     button.contentEdgeInsets = .init(top: 14, left: 30, bottom: 14, right: 30)
+    button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
     
     separator.backgroundColor = .quaternaryLabel
     
@@ -200,7 +202,7 @@ extension HeaderView {
 }
 
 extension HeaderView {
-  @objc func searchBarTapped() {
+  @objc func buttonTapped() {
     delegate?.openSheet()
   }
 }

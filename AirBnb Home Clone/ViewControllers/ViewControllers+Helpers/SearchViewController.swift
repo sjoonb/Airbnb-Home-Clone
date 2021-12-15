@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SwiftUI
 
 
 class SearchViewController: UITableViewController {
@@ -20,14 +21,14 @@ class SearchViewController: UITableViewController {
   let ref = Database.database().reference(withPath: "lodging-items")
   var refObservers: [DatabaseHandle] = []
   
-  let usersRef = Database.database().reference(withPath: "online")
-  var usersRefObservers: [DatabaseHandle] = []
+//  let usersRef = Database.database().reference(withPath: "online")
+//  var usersRefObservers: [DatabaseHandle] = []
   
   // MARK: Properties
   var items: [LodgingItem] = []
   var filteredItems: [LodgingItem] = []
   var user: User?
-  var onlineUserCount = UIBarButtonItem()
+//  var onlineUserCount = UIBarButtonItem()
   var handle: AuthStateDidChangeListenerHandle?
   
   let searchBar = UISearchBar()
@@ -73,7 +74,7 @@ class SearchViewController: UITableViewController {
     navigationController?.isToolbarHidden = false
     
     let completed = ref
-//      .queryOrdered(byChild: "completed")
+      .queryOrdered(byChild: "isFavorite")
       .observe(.value) { snapshot in
         var newItems: [LodgingItem] = []
         for child in snapshot.children {
@@ -83,20 +84,25 @@ class SearchViewController: UITableViewController {
             newItems.append(lodgingItem)
           }
         }
+        newItems.sort {
+          $0.isFavorite && !$1.isFavorite
+        }
         self.items = newItems
         self.filteredItems = newItems
         self.tableView.reloadData()
       }
+      
     refObservers.append(completed)
     
     handle = Auth.auth().addStateDidChangeListener { _, user in
       guard let user = user else { return }
       self.user = user
-      
-      let currentUserRef = self.usersRef.child(user.uid)
-      currentUserRef.setValue(user.email)
-      currentUserRef.onDisconnectRemoveValue()
     }
+//
+//      let currentUserRef = self.usersRef.child(user.uid)
+//      currentUserRef.setValue(user.email)
+//      currentUserRef.onDisconnectRemoveValue()
+//    }
     
   }
   
@@ -106,10 +112,10 @@ class SearchViewController: UITableViewController {
     
     refObservers.forEach(ref.removeObserver(withHandle:))
     refObservers = []
-    usersRefObservers.forEach(usersRef.removeObserver(withHandle:))
-    usersRefObservers = []
-    guard let handle = handle else { return }
-    Auth.auth().removeStateDidChangeListener(handle)
+//    usersRefObservers.forEach(usersRef.removeObserver(withHandle:))
+//    usersRefObservers = []
+//    guard let handle = handle else { return }
+//    Auth.auth().removeStateDidChangeListener(handle)
   }
   
   // MARK: UITableView Delegate methods
@@ -125,7 +131,7 @@ class SearchViewController: UITableViewController {
     cell.textLabel?.text = lodgingItem.name
     cell.detailTextLabel?.text = lodgingItem.addedByUser
     
-    toggleCellCheckbox(cell, isCompleted: lodgingItem.completed)
+    toggleFavoriteMark(cell, isFavorite: lodgingItem.isFavorite)
     
     return cell
   }
@@ -159,15 +165,14 @@ class SearchViewController: UITableViewController {
 
   }
   
-  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
-    if !isCompleted {
-      cell.accessoryType = .none
-      cell.textLabel?.textColor = .black
-      cell.detailTextLabel?.textColor = .black
+  func toggleFavoriteMark(_ cell: UITableViewCell, isFavorite: Bool) {
+    if !isFavorite {
+      cell.accessoryView = nil
+
     } else {
-      cell.accessoryType = .checkmark
-      cell.textLabel?.textColor = .gray
-      cell.detailTextLabel?.textColor = .gray
+      cell.accessoryView = UIImageView(systemImageName: "heart.fill")
+      cell.accessoryView?.tintColor = .systemRed
+
     }
   }
   
@@ -181,20 +186,27 @@ class SearchViewController: UITableViewController {
     
     let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
       guard
-        let textField = alert.textFields?[0],
-        let descriptionTextField = alert.textFields?[1],
-        let text = textField.text,
-        let description = descriptionTextField.text,
+        let text = alert.textFields?[0].text,
+        let description = alert.textFields?[1].text,
+        let streetKey = alert.textFields?[2].text,
+        let latitudeText = alert.textFields?[3].text,
+        let longitudeText = alert.textFields?[4].text,
         let user = self.user
       else { return }
       
-      if text == "" { return }
+      if text == "" || description == "" || streetKey == "" { return  }
+      
+      guard
+        let latitude = Double(latitudeText),
+        let longitude = Double(longitudeText)
+      else { return }
       
       let lodgingItem = LodgingItem(
         name: text,
         description: description,
         addedByUser: user.email ?? "",
-        completed: false)
+        isVisited: false,
+        mapItem: MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude))
       
       let lodgingItemRef = self.ref.child(text.lowercased())
       lodgingItemRef.setValue(lodgingItem.toAnyObject())
@@ -204,11 +216,15 @@ class SearchViewController: UITableViewController {
       title: "Cancel",
       style: .cancel)
     
-    alert.addTextField()
-    alert.addTextField()
-    
+    for _ in 1...5 {
+      alert.addTextField()
+    }
+
     alert.textFields?[0].placeholder = "name"
     alert.textFields?[1].placeholder = "description"
+    alert.textFields?[2].placeholder = "streetKey"
+    alert.textFields?[3].placeholder = "latitude"
+    alert.textFields?[4].placeholder = "longitude"
     
     alert.addAction(saveAction)
     alert.addAction(cancelAction)

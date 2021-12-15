@@ -73,7 +73,7 @@ final class AppController {
       let navMessageViewController = NavigationController(MessageViewController(currentUser: user))
       let navProfileViewController = NavigationController(ProfileViewController())
       let navWishViewController = NavigationController(WishViewController())
-      let navTravelViewController = NavigationController(SearchViewController())
+      let navTravelViewController = NavigationController(TravelViewController())
       
       
       tabBarController.setViewControllers([HomeViewController(), navWishViewController, navTravelViewController, navMessageViewController, navProfileViewController], animated: false)

@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Anchorage
 
 class PreTravelViewController: PreLoginViewController<PreLoginView> {
   override func updateContent() {
@@ -15,6 +16,57 @@ class PreTravelViewController: PreLoginViewController<PreLoginView> {
     contentView.configure(with: loginContent)
   }
 }
+
+class TravelViewController: LodgingTableViewController {
+  let subtitleLabel = UILabel()
+  
+  override init() {
+    super.init()
+    title = "여행"
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.isToolbarHidden = false
+    
+    let _ = ref
+      .observe(.value) { snapshot in
+        var newItems: [LodgingItem] = []
+        for child in snapshot.children {
+          if
+            let snapshot = child as? DataSnapshot,
+            let lodgingItem = LodgingItem(snapshot: snapshot), lodgingItem.isVisited == true {
+            newItems.append(lodgingItem)
+          }
+        }
+        self.items = newItems
+        self.tableView.reloadData()
+      }
+    configureHeader()
+  }
+  
+  // MARK: - Private Helpers
+  
+  private func configureHeader() {
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+    header.backgroundColor = .white
+    
+    let headerLabel = UILabel(frame: header.bounds)
+    headerLabel.text = "이전 여행지"
+    headerLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+    header.addSubview(headerLabel)
+    headerLabel.leadingAnchor == header.leadingAnchor + 20
+    headerLabel.centerYAnchor == header.centerYAnchor
+    
+    tableView.tableHeaderView = header
+  }
+  
+}
+
 
 
 //class TravelViewController: UITableViewController {
@@ -239,7 +291,7 @@ class PreTravelViewController: PreLoginViewController<PreLoginView> {
 //extension TravelViewController: UISearchBarDelegate {
 //  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //    filteredItems = []
-//    
+//
 //    if searchText == "" {
 //      filteredItems = items
 //    }
@@ -252,5 +304,5 @@ class PreTravelViewController: PreLoginViewController<PreLoginView> {
 //    }
 //    self.tableView.reloadData()
 //  }
-//  
+//
 //}

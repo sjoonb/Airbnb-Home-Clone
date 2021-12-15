@@ -57,25 +57,25 @@ class LodgingView: ProgrammaticView {
     favoriteButton.tintColor = .systemRed
     favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
     
-    descriptionLabel.text = "반복되는 일상에서 벗어나 아름다운 속초의 바다를 보며 내 마음을 정화할 수 있는 곳 힐링이 필요하신 분들께 작은 보탬이라도 되고싶어 만든 곳입니다. 생각이 많아 가슴이 답답하신 분들도 힘든 사회생활에 머리가 아프신 분들도 불안한 미래에 걱정이 많으신 분들도 근심, 걱정 다 떨쳐내고 무작정 속초로 떠나보세요!"
+    descriptionLabel.text = ""
     descriptionLabel.numberOfLines = 0
     
     mapViewTitleLabel.text = "호스팅 지역"
     mapViewTitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
     
     
-    let location = CLLocationCoordinate2D(latitude: 38.18857958767892, longitude: 128.60378138910482)
-    let address = [CNPostalAddressStreetKey: "181 Piccadilly, St. James's", CNPostalAddressCityKey: "London", CNPostalAddressPostalCodeKey: "W1A 1ER", CNPostalAddressISOCountryCodeKey: "GB"]
-    
-    let pin = MKPlacemark(coordinate: location, addressDictionary: address)
-    
-    let region = MKCoordinateRegion(
-      center: pin.coordinate,
-      latitudinalMeters: 200,
-      longitudinalMeters: 200)
-    self.mapView.setRegion(region, animated: false)
-    self.mapView.addAnnotation(pin)
-    
+//    let location = CLLocationCoordinate2D(latitude: 38.18857958767892, longitude: 128.60378138910482)
+//    let address = [CNPostalAddressStreetKey: "181 Piccadilly, St. James's", CNPostalAddressCityKey: "London", CNPostalAddressPostalCodeKey: "W1A 1ER", CNPostalAddressISOCountryCodeKey: "GB"]
+//
+//    let pin = MKPlacemark(coordinate: location, addressDictionary: address)
+//
+//    let region = MKCoordinateRegion(
+//      center: pin.coordinate,
+//      latitudinalMeters: 200,
+//      longitudinalMeters: 200)
+//    self.mapView.setRegion(region, animated: false)
+//    self.mapView.addAnnotation(pin)
+//
     mapView.backgroundColor = .white
     
     mapView.layer.cornerRadius = 10.0
@@ -142,12 +142,34 @@ class LodgingView: ProgrammaticView {
   func configure(with content: LodgingItem?) {
     titleLabel.text = content?.name
     descriptionLabel.text = content?.description
-    isFavorite = content?.completed
+    isFavorite = content?.isFavorite
 
     if isFavorite != nil {
       toggleFavoriteButton()
     }
+    
+    configureMapView(with: content?.mapItem)
 
+  }
+  
+  // MARK: - Private Helpers
+  
+  private func configureMapView(with mapItem: MapItem?) {
+    
+    guard let mapItem = mapItem else { return }
+    
+    let location = CLLocationCoordinate2D(latitude: mapItem.latitude, longitude: mapItem.longitude)
+    let address = [CNPostalAddressStreetKey: mapItem.streetKey, CNPostalAddressCountryKey: "/ Republic Of Korea"]
+    
+    let pin = MKPlacemark(coordinate: location, addressDictionary: address)
+    
+    let region = MKCoordinateRegion(
+      center: pin.coordinate,
+      latitudinalMeters: 200,
+      longitudinalMeters: 200)
+    self.mapView.setRegion(region, animated: false)
+    self.mapView.addAnnotation(pin)
+    
   }
   
   private func toggleFavoriteButton() {

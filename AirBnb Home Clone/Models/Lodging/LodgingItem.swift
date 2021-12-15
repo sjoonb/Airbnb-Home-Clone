@@ -33,33 +33,81 @@
 import Firebase
 import FirebaseDatabase
 
+struct MapItem {
+  let streetKey: String
+  let latitude: Double
+  let longitude: Double
+  
+  init(streetKey: String, latitude: Double, longitude: Double) {
+    self.streetKey = streetKey
+    self.latitude = latitude
+    self.longitude = longitude
+  }
+  
+  init?(snapshot: DataSnapshot) {
+    guard
+      let value = snapshot.value as? [String: AnyObject],
+      let streetKey = value["streetKey"] as? String,
+      let latitude = value["latitude"] as? Double,
+      let longitude = value["longitude"] as? Double
+    else {
+      return nil
+    }
+    
+    self.streetKey = streetKey
+    self.latitude = latitude
+    self.longitude = longitude
+
+  }
+  
+  func toAnyObject() -> Any {
+    return [
+      "streetKey": streetKey,
+      "latitude": latitude,
+      "longitude": longitude,
+    ]
+  }
+}
+
 struct LodgingItem {
   let ref: DatabaseReference?
   let key: String
   let name: String
   let description: String
   let addedByUser: String
-  var completed: Bool
+  var isVisited: Bool
+  var isFavorite: Bool
+  let mapItem: MapItem
 //  var isFavorite: Bool
 
   // MARK: Initialize with Raw Data
-  init(name: String, description: String, addedByUser: String, completed: Bool, key: String = "") {
+  init(name: String, description: String, addedByUser: String, isVisited: Bool, isFavorite: Bool = false, key: String = "", mapItem: MapItem) {
     self.ref = nil
     self.key = key
     self.name = name
     self.description = description
     self.addedByUser = addedByUser
-    self.completed = completed
+    self.isVisited = isVisited
+    self.isFavorite = isFavorite
+    self.mapItem = mapItem
   }
 
   // MARK: Initialize with Firebase DataSnapshot
   init?(snapshot: DataSnapshot) {
+    
+    
+    
     guard
       let value = snapshot.value as? [String: AnyObject],
       let name = value["name"] as? String,
       let description = value["description"] as? String,
       let addedByUser = value["addedByUser"] as? String,
-      let completed = value["completed"] as? Bool
+      let isVisited = value["isVisited"] as? Bool,
+      let isFavorite = value["isFavorite"] as? Bool,
+      let mapItemValue = value["mapItem"] as? [String: AnyObject],
+      let streetKey = mapItemValue["streetKey"] as? String,
+      let latitude = mapItemValue["latitude"] as? Double,
+      let longitude = mapItemValue["longitude"] as? Double
     else {
       return nil
     }
@@ -69,7 +117,9 @@ struct LodgingItem {
     self.name = name
     self.description = description
     self.addedByUser = addedByUser
-    self.completed = completed
+    self.isVisited = isVisited
+    self.isFavorite = isFavorite
+    self.mapItem = MapItem(streetKey: streetKey, latitude: latitude, longitude: longitude)
   }
 
   // MARK: Convert LodgingItem to AnyObject
@@ -78,7 +128,9 @@ struct LodgingItem {
       "name": name,
       "description": description,
       "addedByUser": addedByUser,
-      "completed": completed
+      "isVisited": isVisited,
+      "isFavorite": isFavorite,
+      "mapItem": mapItem.toAnyObject()
     ]
   }
 }

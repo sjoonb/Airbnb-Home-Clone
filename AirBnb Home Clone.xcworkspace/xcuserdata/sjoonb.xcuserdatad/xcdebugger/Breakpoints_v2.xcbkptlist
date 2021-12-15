@@ -30,8 +30,8 @@
             filePath = "AirBnb Home Clone/ViewControllers/TravelViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -84,6 +84,22 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "openSheet()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AE8461C-7361-4489-AD07-179184DF81CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnb Home Clone/ViewControllers/TravelViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

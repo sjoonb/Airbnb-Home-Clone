@@ -16,18 +16,10 @@ class PreWishViewController: PreLoginViewController<PreLoginView> {
   }
 }
 
-class WishViewController: UITableViewController {
-  let ref = Database.database().reference(withPath: "lodging-items")
-  private let itemCellIdentifier = "ItemCell"
-
-  var items: [LodgingItem] = []
-  
-  init() {
-    super.init(style: .grouped)
-    
+class WishViewController: LodgingTableViewController {
+  override init() {
+    super.init()
     title = "위시리스트"
-    tableView.backgroundColor = .white
-     
   }
   
   required init?(coder: NSCoder) {
@@ -39,13 +31,12 @@ class WishViewController: UITableViewController {
     navigationController?.isToolbarHidden = false
     
     let _ = ref
-      .queryOrdered(byChild: "completed")
       .observe(.value) { snapshot in
         var newItems: [LodgingItem] = []
         for child in snapshot.children {
           if
             let snapshot = child as? DataSnapshot,
-            let lodgingItem = LodgingItem(snapshot: snapshot), lodgingItem.completed == true {
+            let lodgingItem = LodgingItem(snapshot: snapshot), lodgingItem.isFavorite == true {
             newItems.append(lodgingItem)
           }
         }
@@ -54,24 +45,15 @@ class WishViewController: UITableViewController {
       }
   }
   
-  // MARK: UITableView Delegate methods
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
-  }
-  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier) ?? UITableViewCell(style: .subtitle, reuseIdentifier: itemCellIdentifier)
+    let cell = super.tableView(tableView, cellForRowAt: indexPath)
     
-    let lodgingItem = items[indexPath.row]
-    
-    cell.textLabel?.text = lodgingItem.name
-    cell.detailTextLabel?.text = lodgingItem.addedByUser
-    
-//    toggleCellCheckbox(cell, isCompleted: lodgingItem.completed)
+    cell.accessoryView = UIImageView(systemImageName: "heart.fill")
+    cell.accessoryView?.tintColor = .systemRed
     
     return cell
+  
   }
-  
-  
-  
+
 }
+

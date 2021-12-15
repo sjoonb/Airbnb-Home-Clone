@@ -62,9 +62,9 @@ class LodgingViewController: UIViewController, LodgingViewDelegate {
   // MARK: - LodgingViewDelegate
   
   func toggleFavorite() {
-    let toggledCompletion = !lodgingItem.completed
+    let toggledIsFavorite = !lodgingItem.isFavorite
     
-    lodgingItem.ref?.updateChildValues(["completed": toggledCompletion])
+    lodgingItem.ref?.updateChildValues(["isFavorite": toggledIsFavorite])
 
   }
   
@@ -126,9 +126,9 @@ class TempViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let toggledCompletion = !lodgingItem.completed
+    let toggledCompletion = !lodgingItem.isFavorite
     
-    lodgingItem.ref?.updateChildValues(["completed": toggledCompletion])
+    lodgingItem.ref?.updateChildValues(["isFavorite": toggledCompletion])
     
   }
   

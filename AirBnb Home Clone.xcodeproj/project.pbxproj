@@ -46,6 +46,7 @@
 		DE91FD7C2767DCA6006EE8AD /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91FD7B2767DCA6006EE8AD /* UIViewController+Helpers.swift */; };
 		DEABE3C2273FBF01009A9640 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABE3C1273FBF01009A9640 /* Preview.swift */; };
 		DEB7311727687D4E005B57F6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7311627687D4E005B57F6 /* SearchViewController.swift */; };
+		DEB731192768A112005B57F6 /* LodgingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB731182768A112005B57F6 /* LodgingTableViewController.swift */; };
 		DEBE74E62738D96B0053DAF2 /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE74E52738D96B0053DAF2 /* UIViewControllerPreview.swift */; };
 		DEBE74EA27391B510053DAF2 /* DataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE74E927391B510053DAF2 /* DataSourceProvider.swift */; };
 		DEBEAF93275A5F9B00476A66 /* LodgingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEAF92275A5F9B00476A66 /* LodgingItem.swift */; };
@@ -114,6 +115,7 @@
 		DE91FD7B2767DCA6006EE8AD /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		DEABE3C1273FBF01009A9640 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		DEB7311627687D4E005B57F6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DEB731182768A112005B57F6 /* LodgingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgingTableViewController.swift; sourceTree = "<group>"; };
 		DEBE74E52738D96B0053DAF2 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		DEBE74E927391B510053DAF2 /* DataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProvider.swift; sourceTree = "<group>"; };
 		DEBEAF92275A5F9B00476A66 /* LodgingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LodgingItem.swift; sourceTree = "<group>"; };
@@ -181,7 +183,9 @@
 				DE1896022755FE5D0087A78C /* PreLoginViewController.swift */,
 				DE189604275603BC0087A78C /* LogoutViewController.swift */,
 				DE18961027561AFE0087A78C /* ChatViewController.swift */,
+				DE3D26772767594F00A9F53F /* MapViewController.swift */,
 				DE5A6F0527660B8A00C1FF6C /* LodgingViewController.swift */,
+				DEB731182768A112005B57F6 /* LodgingTableViewController.swift */,
 				DEB7311627687D4E005B57F6 /* SearchViewController.swift */,
 			);
 			path = "ViewControllers+Helpers";
@@ -341,7 +345,6 @@
 				DEC3A41326EF0BBD006DC0EC /* HomeViewController.swift */,
 				DEEBBC68273543990037B73F /* WishViewController.swift */,
 				DE4D8F082737C908008FB36C /* TravelViewController.swift */,
-				DE3D26772767594F00A9F53F /* MapViewController.swift */,
 				DE4D8F0A2737C915008FB36C /* MessageViewController.swift */,
 				DE4D8F0C2737C923008FB36C /* ProfileViewController.swift */,
 				DE1896012755701E0087A78C /* ViewControllers+Helpers */,
@@ -542,6 +545,7 @@
 				DE18961127561AFE0087A78C /* ChatViewController.swift in Sources */,
 				DE4D8F352737DE37008FB36C /* LoginView.swift in Sources */,
 				DE3D267A2767B94700A9F53F /* LodgingView.swift in Sources */,
+				DEB731192768A112005B57F6 /* LodgingTableViewController.swift in Sources */,
 				DE18961F27566D800087A78C /* User+Helpers.swift in Sources */,
 				DE18961527561CFC0087A78C /* UIScrollView.swift in Sources */,
 				DE3D26782767594F00A9F53F /* MapViewController.swift in Sources */,
